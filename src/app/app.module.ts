@@ -1,13 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SectionComponent } from './section/section.component';
 import { ContactComponent } from './contact/contact.component';
+import { AjoutCabinetComponent } from './ajout-cabinet/ajout-cabinet.component';
+import { ListCabinetComponent } from './list-cabinet/list-cabinet.component';
+import { FormsModule } from '@angular/forms';
+import { DashboardDoctorComponent } from './dashboard-doctor/dashboard-doctor.component';
+
+
 
 @NgModule({
   declarations: [
@@ -16,11 +22,19 @@ import { ContactComponent } from './contact/contact.component';
     HeaderComponent,
     FooterComponent,
     SectionComponent,
-    ContactComponent
+    ContactComponent,
+    AjoutCabinetComponent,
+    ListCabinetComponent,
+    DashboardDoctorComponent,
+   
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+     FormsModule,
+    AppRoutingModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
