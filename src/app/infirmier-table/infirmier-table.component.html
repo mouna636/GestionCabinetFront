@@ -1,0 +1,52 @@
+<section id="services" class="services section-bg">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>liste des infirmiers</h2>
+      </div>
+  
+      <!-- <div class="align-items-stretch" data-aos="zoom-in" data-aos-delay="100"> </div>
+        <div class="icon-box"> </div> -->
+           
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>CIN</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Date de Naissance</th>
+                <th>Sexe</th>
+                <th>Téléphone</th>
+                <th>Adresse</th>
+                <th>Email</th>
+                <th>Diplôme</th>
+                <th>Années d'expérience</th>
+                <th>Date d'embauche</th>
+                <th>Salaire</th>
+                <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let infirmier of infirmiers">
+                    <td>{{infirmier.id}}</td>
+                    <td>{{infirmier.cin}}</td>
+                    <td>{{infirmier.nom}}</td>
+                    <td>{{infirmier.prenom}}</td>
+                    <td>{{infirmier.dateNaissance}}</td>
+                    <td>{{infirmier.sexe}}</td>
+                    <td>{{infirmier.telephone}}</td>
+                    <td>{{infirmier.adresse}}</td>
+                    <td>{{infirmier.email}}</td>
+                    <td>{{infirmier.diplome}}</td>
+                    <td>{{infirmier.anneesExperience}}</td>
+                    <td>{{infirmier.dateEmbauche}}</td>
+                    <td>{{infirmier.salaire}}</td>
+                    <td>
+                    <!-- <button class="btn btn-info" (click)="editerInfirmier(infirmier.id)">Editer</button>
+                    <button class="btn btn-danger" (click)="supprimerInfirmier(infirmier.id)">Supprimer</button> -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
