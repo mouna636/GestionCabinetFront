@@ -13,6 +13,9 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
 import { InfirmierService } from "./services/infirmier.service";
+import { AjoutCabinetComponent } from "./ajout-cabinet/ajout-cabinet.component";
+import { ListCabinetComponent } from "./list-cabinet/list-cabinet.component";
+import { DashboardDoctorComponent } from "./dashboard-doctor/dashboard-doctor.component";
 
 
 
@@ -24,7 +27,10 @@ import { InfirmierService } from "./services/infirmier.service";
         FooterComponent,
         SectionComponent,
         ContactComponent,
-        InfirmierTableComponent
+        InfirmierTableComponent,
+        AjoutCabinetComponent,
+        ListCabinetComponent,
+        DashboardDoctorComponent,
     ],
     imports: [
         FormsModule,
@@ -45,4 +51,4 @@ import { InfirmierService } from "./services/infirmier.service";
     providers: [InfirmierService],
     bootstrap: [AppComponent]
     })
-export class AppModule { }
+    export class AppModule { }
