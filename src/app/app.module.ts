@@ -16,9 +16,6 @@ import { DashboardInfermierComponent } from './dashboard-infermier/dashboard-inf
 import { AjoutInfermierComponent } from './ajout-infermier/ajout-infermier.component';
 import { ListInfermierComponent } from './list-infermier/list-infermier.component';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +31,6 @@ import { ListInfermierComponent } from './list-infermier/list-infermier.componen
     AjoutInfermierComponent,
     ListInfermierComponent,
    
-   
     
   ],
   imports: [
@@ -47,4 +43,5 @@ import { ListInfermierComponent } from './list-infermier/list-infermier.componen
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
+
