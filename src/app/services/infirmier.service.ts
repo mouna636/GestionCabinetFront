@@ -11,7 +11,7 @@ export class InfirmierService {
 
     constructor(private httpClient: HttpClient) { } 
    
-    getAllInfirmier():Observable<any> 
+    getAllInfirmiers():Observable<any> 
     {
         return this.httpClient.get(this.InfirmierUrl); 
     }

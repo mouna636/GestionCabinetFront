@@ -1,0 +1,47 @@
+<section id="services" class="services section-bg">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>liste des infermier</h2>
+      </div>
+  
+      <!-- <div class="align-items-stretch" data-aos="zoom-in" data-aos-delay="100"> </div>
+        <div class="icon-box"> </div> -->
+           
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>CIN</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <!-- <th>Date de Naissance</th> -->
+                <th>Sexe</th>
+                <th>Téléphone</th>
+                <th>Adresse</th>
+                <th>Email</th>
+                <th>Diplôme</th>
+                <!-- <th>Date d'embauche</th>
+                <th>Salaire</th> -->
+             
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let i of infirmiers">
+                    <th>{{i.id}}</th>
+                    <td>{{i.cin}}</td>
+                    <td>{{i.nom}}</td>
+                    <td>{{i.prenom}}</td>
+                   <!--  <td>{{i.naissance}}</td> -->
+                    <td>{{i.sexe}}</td>
+                    <td>{{i.telephone}}</td>
+                    <td>{{i.adresse}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.diplome}}</td>
+                   <!--  <td>{{i.dateEmbauche}}</td>
+                    <td>{{i.salaire}}</td> -->
+                  
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
