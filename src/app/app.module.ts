@@ -12,6 +12,8 @@ import { AjoutCabinetComponent } from './ajout-cabinet/ajout-cabinet.component';
 import { ListCabinetComponent } from './list-cabinet/list-cabinet.component';
 import { FormsModule } from '@angular/forms';
 import { DashboardDoctorComponent } from './dashboard-doctor/dashboard-doctor.component';
+import { DashboardInfermierComponent } from './dashboard-infermier/dashboard-infermier.component';
+
 
 
 
@@ -26,6 +28,8 @@ import { DashboardDoctorComponent } from './dashboard-doctor/dashboard-doctor.co
     AjoutCabinetComponent,
     ListCabinetComponent,
     DashboardDoctorComponent,
+    DashboardInfermierComponent,
+   
    
     
   ],
