@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ListInfermierComponent implements OnInit{
   infirmiers:any;
- 
+  
   constructor(private router:Router, private infirmierService:InfirmierService){}
 
   ngOnInit(){
@@ -30,7 +30,7 @@ export class ListInfermierComponent implements OnInit{
     this.router.navigate([`edit-infermier/${x}`])
   }
 
-
+  
 
   //Bouton Delete 
   deleteInfirmier(id:any){
@@ -42,13 +42,11 @@ export class ListInfermierComponent implements OnInit{
     )
   }
   
-  //la méthode qui réciptionne les données modifiiées lorsque je clique sur la bouton modifier de "edit-infermier.component.html" et elle retourne sur list-infermier
-  receiveData($event:any){
-    this.getInfermierFromService();
+ 
   }
  
     
 
 
 
-}
+
