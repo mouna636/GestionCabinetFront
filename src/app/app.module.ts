@@ -16,6 +16,7 @@ import { DashboardInfermierComponent } from './dashboard-infermier/dashboard-inf
 import { AjoutInfermierComponent } from './ajout-infermier/ajout-infermier.component';
 import { ListInfermierComponent } from './list-infermier/list-infermier.component';
 import { EditInfermierComponent } from './edit-infermier/edit-infermier.component';
+import { DashboardStatComponent } from './dashboard-stat/dashboard-stat.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { EditInfermierComponent } from './edit-infermier/edit-infermier.componen
     AjoutInfermierComponent,
     ListInfermierComponent,
     EditInfermierComponent,
+    DashboardStatComponent,
    
     
   ],
