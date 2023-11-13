@@ -34,7 +34,7 @@ export class AjoutInfermierComponent implements OnInit {
     console.log(this.infirmier);
    this.infirmierService.saveInfirmier(this.infirmier).subscribe(
     ()=>{
-      this.router.navigate(['list-infermier']);
+      this.router.navigate(['dashboard-doctor/list-infermier']);
     }
   )
 }

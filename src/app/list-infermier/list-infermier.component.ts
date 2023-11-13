@@ -27,7 +27,7 @@ export class ListInfermierComponent implements OnInit{
 
   //Bouton Edit
   gotToEditInfirmier(x:any){
-    this.router.navigate([`edit-infermier/${x}`])
+    this.router.navigate([`dashboard-doctor/edit-infermier/${x}`])
   }
 
   
@@ -36,7 +36,6 @@ export class ListInfermierComponent implements OnInit{
   deleteInfirmier(id:any){
     this.infirmierService.deleteInfirmier(id).subscribe(
       ()=>{
-        alert('vous êtes sur de supprimer cet infirmier');
         this.getInfermierFromService();
       }
     )

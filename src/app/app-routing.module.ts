@@ -24,10 +24,10 @@ const routes: Routes = [
   {path:'ajout-cabinet', component:AjoutCabinetComponent},
   {path:'list-cabinet',component:ListCabinetComponent},
   {path:'dashboard-doctor',component:DashboardDoctorComponent},
-  {path:'ajout-infermier',component:AjoutInfermierComponent},
-  {path:'list-infermier',component:ListInfermierComponent},
+  {path:'dashboard-doctor/ajout-infermier',component:AjoutInfermierComponent},
+  {path:'dashboard-doctor/list-infermier',component:ListInfermierComponent},
   {path:'dashboard-infermier',component:DashboardDoctorComponent},
-  {path:'edit-infermier/:id',component:EditInfermierComponent}
+  {path:'dashboard-doctor/edit-infermier/:id',component:EditInfermierComponent}
   
 ];
 

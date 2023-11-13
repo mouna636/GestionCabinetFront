@@ -28,7 +28,7 @@ ngOnInit() {
 editInfirmier(){
   this.infirmierService.updateInfirmier(this.id, this.infirmier).subscribe(
     () => {
-      this.router.navigate(['list-infermier']);
+      this.router.navigate(['dashboard-doctor/list-infermier']);
     }
   )
 
