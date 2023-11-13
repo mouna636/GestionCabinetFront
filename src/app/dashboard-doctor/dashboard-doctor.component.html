@@ -32,10 +32,8 @@
         </a>
         <div id="collapseCabinet" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="alerts.html">Ajouter un cabinet</a>
-            <a class="collapse-item" href="buttons.html">Modifier un cabinet</a>
-            <a class="collapse-item" href="dropdowns.html">Consulter un cabinet</a>
-            <a class="collapse-item" href="modals.html">Supprimer un cabinet</a>
+            <a class="collapse-item" (click)="afficheSection('ajouterCabinet')">Ajouter un cabinet</a>
+            <a class="collapse-item" (click)="afficheSection('consulterCabinet')">Consulter un cabinet</a>
           </div>
         </div>
       </li>
@@ -49,10 +47,9 @@
         </a>
         <div id="collapseInfermier" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="alerts.html">Ajouter un infermier</a>
-            <a class="collapse-item" href="buttons.html">Modifier un infermier</a>
-            <a class="collapse-item" href="dropdowns.html">Consulter un infermier</a>
-            <a class="collapse-item" href="modals.html">Supprimer un infermier</a>
+            <a class="collapse-item" (click)="afficheSection('ajouterInfermier')" >Ajouter un infermier</a>
+            <a class="collapse-item" (click)="afficheSection('consulterInfermier')" >Consulter un infermier</a>
+            
           </div>
         </div>
       </li>
@@ -67,9 +64,7 @@
           <div id="collapseConsultation" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
               <a class="collapse-item" href="alerts.html">Ajouter un consultation</a>
-              <a class="collapse-item" href="buttons.html">Modifier un consultation</a>
               <a class="collapse-item" href="dropdowns.html">Consulter un consultation</a>
-              <a class="collapse-item" href="modals.html">Supprimer un consultation</a>
             </div>
           </div>
         </li>
@@ -84,9 +79,7 @@
                   <div id="collapseOrdonnaces" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                       <a class="collapse-item" href="alerts.html">Ajouter un ordonnaces</a>
-                      <a class="collapse-item" href="buttons.html">Modifier un ordonnaces</a>
                       <a class="collapse-item" href="dropdowns.html">Consulter un ordonnaces</a>
-                      <a class="collapse-item" href="modals.html">Supprimer un ordonnaces</a>
                     </div>
                   </div>
                 </li>
@@ -296,18 +289,15 @@
 
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="./">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-            </ol>
-          </div>
-
           
-          <!--Row-->
+          <!--Affichage de formulaire de l'ajout cabinet-->
+          <div *ngIf="sectionAfficher == 'ajouterCabinet' " ><app-ajout-cabinet></app-ajout-cabinet></div>
+          <div *ngIf="sectionAfficher == 'consulterCabinet' " ><app-list-cabinet></app-list-cabinet></div>
 
-         
+         <!--Affichage de formulaire de l'ajout Infermier-->
+         <div *ngIf="sectionAfficher == 'ajouterInfermier' " ><app-ajout-infermier></app-ajout-infermier></div>
+          <div *ngIf="sectionAfficher == 'consulterInfermier' " ><app-list-infermier></app-list-infermier></div>
+
 
           <!-- Modal Logout -->
           <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
