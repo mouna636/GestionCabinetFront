@@ -18,16 +18,16 @@ export class AjoutInfermierComponent implements OnInit {
    {
     this.addInfirmierForm = this.formBuilder.group({ 
       nom:[''],
-       prenom:[''],
-      /*  naissance:new Date(), */
+      prenom:[''],
+      naissance:new Date(), 
       sexe:[''],
       cin:[''],
       telephone:[''],
       adresse:[''],
       email:[''],
       diplome:[''],
-     /*  dateEmbauche:new Date(), */
-     /*  salaire:0  */
+      dateEmbauche:new Date(), 
+      salaire:0  
   });
    }
    saveInfirmier(){ 
@@ -39,3 +39,6 @@ export class AjoutInfermierComponent implements OnInit {
   )
 }
 }
+//
+
+

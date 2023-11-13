@@ -1,44 +1,57 @@
-<form #addInfirmierForm='ngForm' (ngSubmit)='saveInfirmier()'>
-    <div class="form-group">
-        <input type="text" class="form-control" [(ngModel)]='infirmier.nom' [ngModelOptions]="{standalone: true}" placeholder="Nom">
-      </div>
+<section id="services" class="services section-bg">
+   <div class="container" data-aos="fade-up">
+     <div class="section-title">
+       <h2>Ajouter un inferimiers</h2>
+     </div>
 
-    <div class="form-group">
-        <input type="text" class="form-control" [(ngModel)]='infirmier.prenom' [ngModelOptions]="{standalone:true}" placeholder="Prenom">
-    </div>
-    <!--  <div class="form-group">
-        <input type="text" class="form-control" [(ngModel)]='infirmier.naissance'  [ngModelOptions]="{standalone:true}" placeholder="Naissance">
-     </div> -->
- <div class="form-group">
-    <input type="text" class="form-control" [(ngModel)]='infirmier.telephone'  [ngModelOptions]="{standalone:true}" placeholder="Telephone">
- </div>
- <div class="form-group">
-    <input type="text" class="form-control" [(ngModel)]='infirmier.sexe'  [ngModelOptions]="{standalone:true}" placeholder="Sexe">
- </div>
- <div class="form-group">
-    <input type="text" class="form-control" [(ngModel)]='infirmier.cin'  [ngModelOptions]="{standalone:true}" placeholder="Cin">
- </div>
- <div class="form-group">
-    <input type="text" class="form-control" [(ngModel)]='infirmier.adresse'  [ngModelOptions]="{standalone:true}" placeholder="Adresse">
- </div>
- <div class="form-group">
-    <input type="text" class="form-control" [(ngModel)]='infirmier.email'  [ngModelOptions]="{standalone:true}" placeholder="Email">
- </div>
- <div class="form-group">
-    <input type="text" class="form-control" [(ngModel)]='infirmier.diplome'  [ngModelOptions]="{standalone:true}" placeholder="Diplome">
- </div>
- <!-- <div class="form-group">
-    <input type="text" class="form-control" [(ngModel)]='infirmier.dateEmbauche'  [ngModelOptions]="{standalone:true}" placeholder="DateEmbauche">
- </div> -->
-<!--  <div class="form-group">
-    <input type="text" class="form-control" [(ngModel)]='infirmier.salaire'  [ngModelOptions]="{standalone:true}" placeholder="Salaire">
- </div>  -->
- 
-<div class="form-group">
-    <button type="submit" class="btn btn-primary "> envoyer </button>
-</div>
+            <form #addInfirmierForm='ngForm' (ngSubmit)='saveInfirmier()'>
+               <div class="form-group">
+                  <input type="text" class="form-control" [(ngModel)]='infirmier.nom' [ngModelOptions]="{standalone: true}" placeholder="Nom">
+                  </div>
 
-</form>
+               <div class="form-group">
+                  <input type="text" class="form-control" [(ngModel)]='infirmier.prenom' [ngModelOptions]="{standalone:true}" placeholder="Prenom">
+               </div>
+               
+               <div class="form-group">
+                  <label>Date de Naissance</label>
+                  <input type="date" class="form-control" [(ngModel)]='infirmier.naissance'  [ngModelOptions]="{standalone:true}" placeholder="Date de naissance">
+                </div>
+
+                <div class="form-group">
+                  <input type="text" class="form-control" [(ngModel)]='infirmier.sexe'  [ngModelOptions]="{standalone:true}" placeholder="Sexe">
+               </div>
+
+            <div class="form-group">
+               <input type="text" class="form-control" [(ngModel)]='infirmier.telephone'  [ngModelOptions]="{standalone:true}" placeholder="Telephone">
+            </div>
+            
+            <div class="form-group">
+               <input type="text" class="form-control" [(ngModel)]='infirmier.cin'  [ngModelOptions]="{standalone:true}" placeholder="Cin">
+            </div>
+            <div class="form-group">
+               <input type="text" class="form-control" [(ngModel)]='infirmier.adresse'  [ngModelOptions]="{standalone:true}" placeholder="Adresse">
+            </div>
+            <div class="form-group">
+               <input type="text" class="form-control" [(ngModel)]='infirmier.email'  [ngModelOptions]="{standalone:true}" placeholder="Email">
+            </div>
+            <div class="form-group">
+               <input type="text" class="form-control" [(ngModel)]='infirmier.diplome'  [ngModelOptions]="{standalone:true}" placeholder="Diplome">
+            </div>
+            <div class="form-group">
+               <label>Date d'embauche</label>
+               <input type="date" class="form-control" [(ngModel)]='infirmier.dateEmbauche'  [ngModelOptions]="{standalone:true}" placeholder="DateEmbauche">
+            </div> 
+            <div class="form-group">
+               <input type="number" class="form-control" [(ngModel)]='infirmier.salaire'  [ngModelOptions]="{standalone:true}" placeholder="Salaire">
+            </div> 
+            
+            <div class="form-group">
+               <button type="submit" class="btn btn-primary "> Ajouter </button>
+            </div>
+            </form>
+   </div>
+</section>
 
 
 
