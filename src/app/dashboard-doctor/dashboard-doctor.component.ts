@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class DashboardDoctorComponent {
 
+
+  //Affichage des services(sections) dans le dashboard
+  sectionAfficher:String="";
+
+  afficheSection(x:string){
+     this.sectionAfficher=x;}
+
+     
+
+
+
+
 }
+

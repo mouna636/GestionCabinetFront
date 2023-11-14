@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body id="page-top">
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <app-side-bar></app-side-bar>
+      <!-- Sidebar -->
+
+      <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+          <!-- TopBar -->
+          <app-top-bar></app-top-bar>
+          <!-- Topbar -->
+
+          <!-- Container Fluid-->
+          <div class="container-fluid" id="container-wrapper">
+            <section id="services" class="services section-bg">
+              <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                  <h2>Modifier un inferimiers</h2>
+                </div>
+
+                <form
+                  #editConsultationForm="ngForm"
+                  (ngSubmit)="editConsultation()"
+                >
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      [(ngModel)]="consultation.synthese"
+                      [ngModelOptions]="{ standalone: true }"
+                      placeholder="Synthese"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      [(ngModel)]="consultation.act"
+                      [ngModelOptions]="{ standalone: true }"
+                      placeholder="Act"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="date"
+                      class="form-control"
+                      [(ngModel)]="consultation.date_consultation"
+                      [ngModelOptions]="{ standalone: true }"
+                      placeholder="Date de Consultation"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      (click)="editConsultation()"
+                    >
+                      Modifier
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </section>
+            =
+            <!-- Modal Logout -->
+            <div
+              class="modal fade"
+              id="logoutModal"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="exampleModalLabelLogout"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabelLogout">
+                      Ohh No!
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Are you sure you want to logout?</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-outline-primary"
+                      data-dismiss="modal"
+                    >
+                      Cancel
+                    </button>
+                    <a href="login.html" class="btn btn-primary">Logout</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---Container Fluid-->
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll to top -->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+  </body>
+</html>

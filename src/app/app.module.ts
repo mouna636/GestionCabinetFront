@@ -17,6 +17,17 @@ import { AjoutInfermierComponent } from './ajout-infermier/ajout-infermier.compo
 import { ListInfermierComponent } from './list-infermier/list-infermier.component';
 import { CabinetPatientComponent } from './cabinet-patient/cabinet-patient.component';
 
+import { EditInfermierComponent } from './edit-infermier/edit-infermier.component';
+import { DashboardStatComponent } from './dashboard-stat/dashboard-stat.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
+import { SideBarInfComponent } from './side-bar-inf/side-bar-inf.component';
+import { AjoutPatientComponent } from './ajout-patient/ajout-patient.component';
+import { AjoutConsultationComponent } from './ajout-consultation/ajout-consultation.component';
+import { ListConsultationComponent } from './list-consultation/list-consultation.component';
+import { ListPatientComponent } from './list-patient/list-patient.component';
+import { EditConsultationComponent } from './edit-consultation/edit-consultation.component';
+import { EditPatientComponent } from './edit-patient/edit-patient.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +45,17 @@ import { CabinetPatientComponent } from './cabinet-patient/cabinet-patient.compo
     ListInfermierComponent,
     CabinetPatientComponent,
    
+    EditInfermierComponent,
+    DashboardStatComponent,
+    SideBarComponent,
+    TopBarComponent,
+    SideBarInfComponent,
+    AjoutPatientComponent,
+    AjoutConsultationComponent,
+    ListConsultationComponent,
+    ListPatientComponent,
+    EditConsultationComponent,
+    EditPatientComponent,
    
     
   ],

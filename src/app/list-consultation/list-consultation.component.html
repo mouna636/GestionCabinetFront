@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body id="page-top">
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <app-side-bar></app-side-bar>
+      <!-- Sidebar -->
+
+      <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+          <!-- TopBar -->
+          <app-top-bar></app-top-bar>
+          <!-- Topbar -->
+
+          <!-- Container Fluid-->
+          <div class="container-fluid" id="container-wrapper">
+            <section id="services" class="services section-bg">
+              <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                  <h2>liste des consultations</h2>
+                </div>
+
+                <!-- <div class="align-items-stretch" data-aos="zoom-in" data-aos-delay="100"> </div>
+                <div class="icon-box"> </div> -->
+
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Date consultation</th>
+                      <th>Synthese</th>
+                      <th>act</th>
+                      <th>Patient</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let i of consultations">
+                      <th>{{ i.id }}</th>
+                      <td>{{ i.date_consultation }}</td>
+                      <td>{{ i.Synthese }}</td>
+                      <td>{{ i.act }}</td>
+                      <td>
+                        {{
+                          i.patient.nomPatient + " " + i.patient.prenomPatient
+                        }}
+                      </td>
+                      <td>
+                        <button
+                          class="btn btn-primary btn-sm mr-2"
+                          (click)="gotToEditConsultation(i.id)"
+                        >
+                          Edit
+                        </button>
+                        <button
+                          class="btn btn-danger btn-sm"
+                          (click)="deleteConsultation(i.id)"
+                        >
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            <!-- Modal Logout -->
+            <div
+              class="modal fade"
+              id="logoutModal"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="exampleModalLabelLogout"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabelLogout">
+                      Ohh No!
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Are you sure you want to logout?</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-outline-primary"
+                      data-dismiss="modal"
+                    >
+                      Cancel
+                    </button>
+                    <a href="login.html" class="btn btn-primary">Logout</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---Container Fluid-->
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll to top -->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+  </body>
+</html>
