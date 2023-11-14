@@ -3,18 +3,18 @@ import { CabinetService } from '../services/cabinet.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-list-cabinet',
-  templateUrl: './list-cabinet.component.html',
-  styleUrls: ['./list-cabinet.component.css']
+  selector: 'app-cabinet-patient',
+  templateUrl: './cabinet-patient.component.html',
+  styleUrls: ['./cabinet-patient.component.css']
 })
-export class ListCabinetComponent implements OnInit {
+export class CabinetPatientComponent implements OnInit {
+  adresse:any;
   cabinets:any;
-  cabinetId:any;
-  horairesTravail:any;
   constructor(private cabinetservice:CabinetService,private route: ActivatedRoute){}
   ngOnInit(){
    this.getAllCabinetsFromService();
    
+  
   }
 getAllCabinetsFromService(){
   this.cabinetservice.getAllCabinets().subscribe(
@@ -23,5 +23,11 @@ getAllCabinetsFromService(){
     }
   )
 }
-
-}
+searchCabinetByAdresse(){
+  this.cabinetservice.searchCabinetByAdresse(this.adresse).subscribe(
+    (data)=> {
+      this.cabinets=data;
+       }
+  );
+      }
+    }

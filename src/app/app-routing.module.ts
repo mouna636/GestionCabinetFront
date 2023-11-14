@@ -10,6 +10,7 @@ import { ListCabinetComponent } from './list-cabinet/list-cabinet.component';
 import { DashboardDoctorComponent } from './dashboard-doctor/dashboard-doctor.component';
 import { AjoutInfermierComponent } from './ajout-infermier/ajout-infermier.component';
 import { ListInfermierComponent } from './list-infermier/list-infermier.component';
+import { CabinetPatientComponent } from './cabinet-patient/cabinet-patient.component';
 
 
 
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path:'dashboard-doctor',component:DashboardDoctorComponent},
   {path:'ajout-infermier',component:AjoutInfermierComponent},
   {path:'list-infermier',component:ListInfermierComponent},
-  {path:'dashboard-infermier',component:DashboardDoctorComponent}
+  {path:'dashboard-infermier',component:DashboardDoctorComponent},
+  {path:'cabinet-patient',component:CabinetPatientComponent}
   
 ];
 

@@ -17,4 +17,7 @@ CabinetsUrl:string ='http://localhost:8080/cabinets';
   addCabinet(cabinet:any): Observable<any>{
     return this.http.post(this.CabinetsUrl,cabinet);
   }
+  searchCabinetByAdresse(adresse:any): Observable<any>{
+  return this.http.get(`${this.CabinetsUrl}/searchadr?adresse=${adresse}`);
+  }   
 }

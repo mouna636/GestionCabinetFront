@@ -1,4 +1,4 @@
-<form #addCabinetForm='ngForm' (ngSubmit)='addCabinet()'>
+<form #addCabinetForm='ngForm' (ngSubmit)='addCabinet()' >
     <div class="form-group">
         <input type="text" class="form-control" [(ngModel)]='cabinet.name' [ngModelOptions]="{standalone: true}" placeholder="Name">
     </div>
@@ -6,13 +6,33 @@
     <div class="form-group">
         <input type="text" class="form-control" [(ngModel)]='cabinet.adresse' [ngModelOptions]="{standalone:true}" placeholder="Adresse">
     </div>
-     <!-- <div class="form-group">
-        <input type="text" class="form-control" [(ngModel)]='cabinet.horaires' [ngModelOptions]="{standalone:true}" placeholder="horaires">
-     </div> -->
- <div class="form-group">
-    <input type="text" class="form-control" [(ngModel)]='cabinet.telephone'  [ngModelOptions]="{standalone:true}" placeholder="Telephone">
- </div>
+    <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]='cabinet.telephone'  [ngModelOptions]="{standalone:true}" placeholder="Telephone">
+     </div>
+     <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]='cabinet.specialite'  [ngModelOptions]="{standalone:true}" placeholder="specialite">
+     </div>
+      <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]='cabinet.matriculefiscale' [ngModelOptions]="{standalone:true}" placeholder="MatriculeFiscale">
+     </div> 
+  
+    <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]='cabinet.photo' [ngModelOptions]="{standalone:true}" placeholder="Photo">
+   </div> 
 
+     <div class="form-group">
+  <input type="text" class="form-control" [(ngModel)]='cabinet.ville' [ngModelOptions]="{standalone:true}" placeholder="Ville">
+      </div> 
+
+     <div class="form-group">
+       <input type="text" class="form-control" [(ngModel)]='cabinet.codepostale' [ngModelOptions]="{standalone:true}" placeholder="Code Postal">
+     </div> 
+    <div class="form-group">
+       <input type="text" class="form-control" [(ngModel)]='cabinet.email' [ngModelOptions]="{standalone:true}" placeholder="Email">
+    </div> 
+  <div class="form-group">
+    <input type="text" class="form-control" [(ngModel)]='cabinet.pwd' [ngModelOptions]="{standalone:true}" placeholder="Pwd">
+  </div> 
 <div class="form-group">
     <button type="submit" class="btn btn-primary "> envoyer </button>
 </div>

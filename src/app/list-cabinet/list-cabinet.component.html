@@ -5,7 +5,12 @@
 <th scope="col">name</th>
 <th scope="col">Adresse</th>
 <th scope="col">Telephone</th>
-<th scope="col">Actions</th>
+<th scope="col">MatriculeFiscale</th>
+<th scope="col">Photo</th>
+<th scope="col">Ville</th>
+<th scope="col">CodePostale</th>
+<th scope="col">Email</th>
+<th scope="col">Password</th>
 </tr>
 </thead>
 <tbody>
@@ -14,11 +19,14 @@
 <td>{{c.name}}</td>
 <td>{{c.adresse}}</td>
 <td>{{c.telephone}}</td>
-
-<td>
-<button class="btn btn-primary">Accepter</button>
-<button class="btn btn-danger">Refuser</button>
-</td>
+<td>{{c.matriculefiscale}}</td>
+<td>{{c.photo}}</td>
+<td>{{c.ville}}</td> 
+<td>{{c.codepostale}}</td>
+<td>{{c.email}}</td>   
+<td>{{c.pwd}}</td>  
+   
+   
 </tr>
 </tbody>
 </table>
