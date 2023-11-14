@@ -3,7 +3,7 @@
   <body id="page-top">
     <div id="wrapper">
       <!-- Sidebar -->
-      <app-side-bar-inf></app-side-bar-inf>
+      <app-side-bar></app-side-bar>
       <!-- Sidebar -->
 
       <div id="content-wrapper" class="d-flex flex-column">
@@ -14,14 +14,56 @@
 
           <!-- Container Fluid-->
           <div class="container-fluid" id="container-wrapper">
-            <!--Affichage de formulaire de l'ajout cabinet-->
-            <!--  <div *ngIf="sectionAfficher == 'ajouterCabinet' " ><app-ajout-cabinet></app-ajout-cabinet></div>
-          <div *ngIf="sectionAfficher == 'consulterCabinet' " ><app-list-cabinet></app-list-cabinet></div> -->
+            <section id="services" class="services section-bg">
+              <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                  <h2>liste des consultations</h2>
+                </div>
 
-            <!--Affichage de formulaire de l'ajout Infermier-->
-            <!-- <div *ngIf="sectionAfficher == 'ajouterInfermier' " ><app-ajout-infermier></app-ajout-infermier></div>
-          <div *ngIf="sectionAfficher == 'consulterInfermier' " ><app-list-infermier></app-list-infermier></div> -->
+                <!-- <div class="align-items-stretch" data-aos="zoom-in" data-aos-delay="100"> </div>
+                <div class="icon-box"> </div> -->
 
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Date consultation</th>
+                      <th>Synthese</th>
+                      <th>act</th>
+                      <th>Patient</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let i of consultations">
+                      <th>{{ i.id }}</th>
+                      <td>{{ i.date_consultation }}</td>
+                      <td>{{ i.Synthese }}</td>
+                      <td>{{ i.act }}</td>
+                      <td>
+                        {{
+                          i.patient.nomPatient + " " + i.patient.prenomPatient
+                        }}
+                      </td>
+                      <td>
+                        <button
+                          class="btn btn-primary btn-sm mr-2"
+                          (click)="gotToEditConsultation(i.id)"
+                        >
+                          Edit
+                        </button>
+                        <button
+                          class="btn btn-danger btn-sm"
+                          (click)="deleteConsultation(i.id)"
+                        >
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
             <!-- Modal Logout -->
             <div
               class="modal fade"

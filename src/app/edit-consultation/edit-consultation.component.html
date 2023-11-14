@@ -3,7 +3,7 @@
   <body id="page-top">
     <div id="wrapper">
       <!-- Sidebar -->
-      <app-side-bar-inf></app-side-bar-inf>
+      <app-side-bar></app-side-bar>
       <!-- Sidebar -->
 
       <div id="content-wrapper" class="d-flex flex-column">
@@ -14,14 +14,57 @@
 
           <!-- Container Fluid-->
           <div class="container-fluid" id="container-wrapper">
-            <!--Affichage de formulaire de l'ajout cabinet-->
-            <!--  <div *ngIf="sectionAfficher == 'ajouterCabinet' " ><app-ajout-cabinet></app-ajout-cabinet></div>
-          <div *ngIf="sectionAfficher == 'consulterCabinet' " ><app-list-cabinet></app-list-cabinet></div> -->
+            <section id="services" class="services section-bg">
+              <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                  <h2>Modifier un inferimiers</h2>
+                </div>
 
-            <!--Affichage de formulaire de l'ajout Infermier-->
-            <!-- <div *ngIf="sectionAfficher == 'ajouterInfermier' " ><app-ajout-infermier></app-ajout-infermier></div>
-          <div *ngIf="sectionAfficher == 'consulterInfermier' " ><app-list-infermier></app-list-infermier></div> -->
+                <form
+                  #editConsultationForm="ngForm"
+                  (ngSubmit)="editConsultation()"
+                >
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      [(ngModel)]="consultation.synthese"
+                      [ngModelOptions]="{ standalone: true }"
+                      placeholder="Synthese"
+                    />
+                  </div>
 
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      [(ngModel)]="consultation.act"
+                      [ngModelOptions]="{ standalone: true }"
+                      placeholder="Act"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="date"
+                      class="form-control"
+                      [(ngModel)]="consultation.date_consultation"
+                      [ngModelOptions]="{ standalone: true }"
+                      placeholder="Date de Consultation"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      (click)="editConsultation()"
+                    >
+                      Modifier
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </section>
+            =
             <!-- Modal Logout -->
             <div
               class="modal fade"

@@ -19,6 +19,13 @@ import { EditInfermierComponent } from './edit-infermier/edit-infermier.componen
 import { DashboardStatComponent } from './dashboard-stat/dashboard-stat.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { SideBarInfComponent } from './side-bar-inf/side-bar-inf.component';
+import { AjoutPatientComponent } from './ajout-patient/ajout-patient.component';
+import { AjoutConsultationComponent } from './ajout-consultation/ajout-consultation.component';
+import { ListConsultationComponent } from './list-consultation/list-consultation.component';
+import { ListPatientComponent } from './list-patient/list-patient.component';
+import { EditConsultationComponent } from './edit-consultation/edit-consultation.component';
+import { EditPatientComponent } from './edit-patient/edit-patient.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +45,13 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     DashboardStatComponent,
     SideBarComponent,
     TopBarComponent,
+    SideBarInfComponent,
+    AjoutPatientComponent,
+    AjoutConsultationComponent,
+    ListConsultationComponent,
+    ListPatientComponent,
+    EditConsultationComponent,
+    EditPatientComponent,
    
     
   ],

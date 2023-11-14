@@ -6,7 +6,7 @@
     <div class="sidebar-brand-icon">
       <img src="assets/img1/logo/logo2.png" />
     </div>
-    <div class="mx-3">Dashboard Doctor</div>
+    <div class="mx-3">Dashboard Infermier</div>
   </a>
   <hr class="sidebar-divider my-0" />
   <li class="nav-item active">
@@ -18,122 +18,86 @@
   <hr class="sidebar-divider" />
   <div class="sidebar-heading">Services</div>
 
-  <!-- Gestion cabinet -->
+  <!-- Gestion patients -->
   <li class="nav-item">
     <a
       class="nav-link collapsed"
       href="#"
       data-toggle="collapse"
-      data-target="#collapseCabinet"
+      data-target="#collapsePatient"
       aria-expanded="true"
       aria-controls="collapseBootstrap"
     >
       <i class="far fa-fw fa-window-maximize"></i>
-      <span>Gestion cabinet</span>
+      <span>Gestion patients</span>
     </a>
     <div
-      id="collapseCabinet"
+      id="collapsePatient"
       class="collapse"
       aria-labelledby="headingBootstrap"
       data-parent="#accordionSidebar"
     >
       <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item">Ajouter un cabinet</a>
-        <a class="collapse-item">Consulter un cabinet</a>
+        <a class="collapse-item" href="/dashboard-infermier/ajout-patient"
+          >Ajouter un patient</a
+        >
+        <a class="collapse-item" href="/dashboard-infermier/list-patient"
+          >Consulter un patient</a
+        >
       </div>
     </div>
   </li>
-
-  <!-- Gestion Infermier -->
   <li class="nav-item">
     <a
       class="nav-link collapsed"
       href="#"
       data-toggle="collapse"
-      data-target="#collapseInfermier"
+      data-target="#collapseRendez"
       aria-expanded="true"
       aria-controls="collapseBootstrap"
     >
       <i class="far fa-fw fa-window-maximize"></i>
-      <span>Gestion infermiers</span>
+      <span>Gestion rendez-vous</span>
     </a>
     <div
-      id="collapseInfermier"
+      id="collapseRendez"
       class="collapse"
       aria-labelledby="headingBootstrap"
       data-parent="#accordionSidebar"
     >
       <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item" href="/dashboard-doctor/ajout-infermier"
-          >Ajouter un infermier</a
-        >
-        <a class="collapse-item" href="/dashboard-doctor/list-infermier"
-          >Consulter un infermier</a
-        >
+        <a class="collapse-item">Consulter les rendez-vous</a>
       </div>
     </div>
   </li>
-
-  <!-- Gestion Consultation -->
   <li class="nav-item">
     <a
       class="nav-link collapsed"
       href="#"
       data-toggle="collapse"
-      data-target="#collapseConsultation"
+      data-target="#collapseFacture"
       aria-expanded="true"
       aria-controls="collapseBootstrap"
     >
       <i class="far fa-fw fa-window-maximize"></i>
-      <span>Gestion consultations</span>
+      <span>Gestion Factures</span>
     </a>
     <div
-      id="collapseConsultation"
+      id="collapseFacture"
       class="collapse"
       aria-labelledby="headingBootstrap"
       data-parent="#accordionSidebar"
     >
       <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item" href="/dashboard-doctor/ajout-consultation"
-          >Ajouter un consultation</a
-        >
-        <a class="collapse-item" href="/dashboard-doctor/list-consultation"
-          >Consulter un consultation</a
-        >
+        <a class="collapse-item">Ajouter un facture</a>
+        <a class="collapse-item">Consulter les factures</a>
       </div>
     </div>
   </li>
-
-  <!-- Gestion Ordonnaces -->
-  <li class="nav-item">
-    <a
-      class="nav-link collapsed"
-      href="#"
-      data-toggle="collapse"
-      data-target="#collapseOrdonnaces"
-      aria-expanded="true"
-      aria-controls="collapseBootstrap"
-    >
-      <i class="far fa-fw fa-window-maximize"></i>
-      <span>Gestion ordonnaces</span>
-    </a>
-    <div
-      id="collapseOrdonnaces"
-      class="collapse"
-      aria-labelledby="headingBootstrap"
-      data-parent="#accordionSidebar"
-    >
-      <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item">Ajouter un ordonnaces</a>
-        <a class="collapse-item">Consulter un ordonnaces</a>
-      </div>
-    </div>
-  </li>
-
   <!--  <li class="nav-item">
-      <a class="nav-link" href="ui-colors.html">
-        <i class="fas fa-fw fa-palette"></i>
-        <span>Gestion des ordonnances</span>
-      </a>
-    </li> -->
+        <a class="nav-link" href="ui-colors.html">
+          <i class="fas fa-fw fa-palette"></i>
+          <span>Gestion des ordonnances</span>
+        </a>
+      </li> -->
 </ul>
