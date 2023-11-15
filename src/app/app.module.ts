@@ -15,6 +15,8 @@ import { DashboardDoctorComponent } from './dashboard-doctor/dashboard-doctor.co
 import { DashboardInfermierComponent } from './dashboard-infermier/dashboard-infermier.component';
 import { AjoutInfermierComponent } from './ajout-infermier/ajout-infermier.component';
 import { ListInfermierComponent } from './list-infermier/list-infermier.component';
+import { CabinetPatientComponent } from './cabinet-patient/cabinet-patient.component';
+
 import { EditInfermierComponent } from './edit-infermier/edit-infermier.component';
 import { DashboardStatComponent } from './dashboard-stat/dashboard-stat.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
@@ -42,6 +44,8 @@ import { AjoutOrdonnanceComponent } from './ajout-ordonnance/ajout-ordonnance.co
     DashboardInfermierComponent,
     AjoutInfermierComponent,
     ListInfermierComponent,
+    CabinetPatientComponent,
+   
     EditInfermierComponent,
     DashboardStatComponent,
     SideBarComponent,

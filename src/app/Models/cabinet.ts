@@ -5,7 +5,15 @@ export class Cabinet{
         name:string,
         adresse:string,
         telephone:string,
-        horaires:string,
+        specialite:string,
+        matriculefiscale: String ,
+        photo: String ,
+        ville: String ,
+        codepostale: String ,
+        email: String ,
+        pwd: String ,
+        horairesTravail:any[]
+       
         
         
     ){}

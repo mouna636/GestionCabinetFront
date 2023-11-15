@@ -1,0 +1,42 @@
+
+<section id="team" class="team section-bg">
+<div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>cabinets</h2>
+      </div>
+        <div class="row" style="margin-left: 15%;margin-bottom: 30px;max-width: 70%;">
+        <div class="input-group"  >
+          <input type="search" id="form1" class="form-control" [(ngModel)]="adresse" placeholder="Search by adresse...">
+          <button type="button" style="color: black;" class="btn btn-secondary" (click)="searchCabinetByAdresse()">
+            <i class="fas fa-search" style="color: rgba(140, 141, 150, 0.888);"></i>
+          </button>
+        </div>
+        </div>
+      
+   <div class="row">
+            <div *ngFor="let c of cabinets" class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+              <div class="member d-flex align-items-start">
+                <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt=""></div>
+                <div class="member-info">
+                       <h4>{{c.name }}</h4>
+                       <span>{{c.specialite }}</span>
+                       <p>{{c.adresse }}</p>
+                        <p>{{c.telephone }}</p>
+                        
+                  </div>
+             
+               <div class="social">
+                    <a href=""><i class="ri-twitter-fill"></i></a>
+                    <a href=""><i class="ri-facebook-fill"></i></a>
+                    <a href=""><i class="ri-instagram-fill"></i></a>
+                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                  </div>
+                 
+        </div>
+        </div>
+        <br>
+        </div>
+        </div>
+      
+    
+  </section>

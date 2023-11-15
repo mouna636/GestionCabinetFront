@@ -24,5 +24,6 @@ export class HorTravailService {
 
   deleteHoraire(id: number): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/${id}`);
-  }
+  } 
+  
 }

@@ -17,16 +17,23 @@ export class AjoutCabinetComponent implements OnInit {
    this.addCabinetForm=this.formBuilder.group(
     { 
       name:[''],
-      adresse:[''],
-      telephone:['']
-
+      adresse:[''],       
+      telephone:[''],
+      specialite:[''],
+      matriculefiscale:[''],
+      photo:[''],
+      ville:[''],
+      codepostale:[''],
+      email:[''],
+      pwd:['']
+  
     })
 }
 addCabinet(){
   console.log (this.cabinet);
   this.cabinetService.addCabinet(this.cabinet).subscribe(
     ()=>{
-      this.router.navigate(['list-cabinet']);
+      this.router.navigate(['dashboard-doctor']);
     }
   )
 }
