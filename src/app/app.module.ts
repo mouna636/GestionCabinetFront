@@ -26,6 +26,7 @@ import { ListConsultationComponent } from './list-consultation/list-consultation
 import { ListPatientComponent } from './list-patient/list-patient.component';
 import { EditConsultationComponent } from './edit-consultation/edit-consultation.component';
 import { EditPatientComponent } from './edit-patient/edit-patient.component';
+import { AjoutOrdonnanceComponent } from './ajout-ordonnance/ajout-ordonnance.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { EditPatientComponent } from './edit-patient/edit-patient.component';
     ListPatientComponent,
     EditConsultationComponent,
     EditPatientComponent,
+    AjoutOrdonnanceComponent,
    
     
   ],

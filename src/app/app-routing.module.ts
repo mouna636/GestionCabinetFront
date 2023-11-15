@@ -19,6 +19,7 @@ import { AjoutConsultationComponent } from './ajout-consultation/ajout-consultat
 import { ListConsultationComponent } from './list-consultation/list-consultation.component';
 import { EditConsultationComponent } from './edit-consultation/edit-consultation.component';
 import { EditPatientComponent } from './edit-patient/edit-patient.component';
+import { AjoutOrdonnanceComponent } from './ajout-ordonnance/ajout-ordonnance.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -66,6 +67,8 @@ const routes: Routes = [
     path: 'dashboard-infermier/list-patient',
     component: ListPatientComponent,
   },
+  {path: 'ajout-ordonnance', component: AjoutOrdonnanceComponent}
+  
 ];
 
 @NgModule({
