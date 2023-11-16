@@ -44,6 +44,7 @@ const routes: Routes = [
   {path: 'dashboard-doctor/ajout-consultation',component: AjoutConsultationComponent},
   {path: 'dashboard-doctor/edit-consultation/:id',component: EditConsultationComponent},
   {path: 'dashboard-doctor/list-consultation',component: ListConsultationComponent },
+  {path:'dashboard-doctor/ajout-ordonnance',component: AjoutOrdonnanceComponent},
   { path: 'dashboard-infermier', component: DashboardInfermierComponent },
   {
     path: 'dashboard-infermier/ajout-patient',
@@ -57,7 +58,7 @@ const routes: Routes = [
     path: 'dashboard-infermier/list-patient',
     component: ListPatientComponent,
   },
-  {path: 'ajout-ordonnance', component: AjoutOrdonnanceComponent}
+  {path: 'ajout-ordonnance', component: AjoutOrdonnanceComponent},
   {path: 'dashboard-infermier/ajout-patient',component: AjoutPatientComponent },
   {path: 'dashboard-infermier/edit-patient/:id',component: EditPatientComponent},
   {path: 'dashboard-infermier/list-patient',component: ListPatientComponent},

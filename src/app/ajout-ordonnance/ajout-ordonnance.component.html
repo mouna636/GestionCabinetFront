@@ -15,32 +15,37 @@
        <app-top-bar></app-top-bar>
         <!-- Topbar -->
 
-        <!-- Container Fluid-->
+        <!-- Interface ajout ordonnance -->
         <div class="container-fluid" id="container-wrapper">
          <section id="services" class="services section-bg">
-            <div class="container" data-aos="fade-up">
+            <div class="container" data-aos="fade-up"> 
               <div class="section-title">
                 <h2>Ajouter un ordonnance</h2>
               </div>
-              <form #addPatientForm='ngForm' #addOrdonnanceTraitementForm>
+
+               <form  class="bordered-form" #addPatientForm='ngForm' #addOrdonnanceTraitementForm>    <!-- class="bordered-form" pour entourer la formulaire par un cadre -->
                 <div class="form-group">
                   <div class="row">
                     <div class="col-sm-5">
-                      
-                      <select class="form-control" >
-                        <option [value]="undefined" style="-webkit-text-fill-color: red ;" selected>Type d'Ordonnance </option>
-                        
-                        <option value="Ordonnance médicale" style="-webkit-text-fill-color: red ;">Ordonnance médicale</option>
-                        <option value="Ordonnance chirurgicale">Ordonnance chirurgicale</option>
-                        <option value="Ordonnance d'arrêt de travail">Ordonnance d'arrêt de travail</option>
+
+                      <!-- Liste roulante -->
+                      <div style="position: relative;">
+                      <select class="form-control"  style="background-color: #6777ef; color: #fff; padding-right: 30px;">
+                        <option [value]="undefined" selected >Type d'Ordonnance </option> 
+                        <option value="Ordonnance médicale" style="background-color: #6777ef;">Ordonnance médicale</option>
+                        <option value="Ordonnance chirurgicale" style="background-color: #6777ef;">Ordonnance chirurgicale</option>
+                        <option value="Ordonnance d'arrêt de travail" style="background-color: #6777ef;">Ordonnance d'arrêt de travail</option>
                       </select>
+                      <i class="fas fa-chevron-down" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%);"></i>
+                    </div>
                     </div>
                     <div class="col-sm-5">
                       <button type="button" class="btn btn-primary mr-3">Aperçu et Imprimer</button>
-                      <button type="button" class="btn btn-success">Imprimer</button>
+                      <button type="button" class="btn btn-primary mr-3">Imprimer</button>
                     </div>
                   </div>
                 </div>
+                <!-- Les Champs de formulaire -->
                 <div class="form-group">
                   <div class="row">
                     <div class="col">
@@ -62,15 +67,60 @@
                   </div>
                 </div>
               </form>
-              
-              
-
-
-
-
-
-            </div>
+            </div> 
         </section>
+      <div class="container-fluid" id="container-wrapper">
+        <section>
+          <div class="container" data-aos="fade-up"> 
+                  <!-- Tableau -->
+                  <form class="bordered-form form-table-container" #addPatientForm='ngForm' #addOrdonnanceTraitementForm>
+                      <table class="bordered-form">
+                          <thead>
+                              <tr>
+                                  <th>Médicament</th>
+                                  <th>Posologie</th>
+                                  <th>Nombre d'unité</th>
+                                  <th>QSP</th>
+                                  <th>Actions</th>
+                              </tr>
+                          </thead> 
+                          <tbody>
+                              <tr >
+                                  <td><input type="text" class="form-control" [(ngModel)]='ordonnanceTraitement.medicament' name="nomMedicament" placeholder="Médicament"></td>
+                                  <td><input type="text" class="form-control" [(ngModel)]='ordonnanceTraitement.posologie' name="posologie" placeholder="Posologie"></td>
+                                  <td><input type="text" class="form-control" [(ngModel)]='ordonnanceTraitement.nombreUnite' name="nombreUnite" placeholder="Nombre d'unité"></td>
+                                  <td><input type="text" class="form-control" [(ngModel)]='ordonnanceTraitement.qsp' name="qsp" placeholder="QSP"></td>
+                                  <td><button type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button></td>
+                              </tr>
+                          </tbody>
+                      </table>
+      
+                      <!-- Bouton "Ajouter médicament" -->
+                      <div class="form-group">
+                          <button type="button" class="btn btn-primary mt-3"><i class="fas fa-plus"></i>Ajouter médicament</button>
+                      </div>
+      
+                  </form>
+             
+                <div class="form-group mt-3 text-right">
+                  <button type="button" class="btn btn-light">Cancel</button>
+                  <button type="button" class="btn btn-success ml-2">Sauvegarder</button>
+              </div>
+          </div>
+              </section>
+            </div>
+        
+      
+
+
+
+
+
+
+
+
+
+
         
          <!-- Modal Logout -->
          <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
