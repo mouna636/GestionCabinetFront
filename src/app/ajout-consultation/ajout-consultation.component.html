@@ -19,18 +19,17 @@
                 <div class="section-title">
                   <h2>Ajouter un consultation</h2>
                 </div>
-
                 <form
-                  #addConsultationForm="ngForm"
-                  (ngSubmit)="saveConsultation()"
+                  #getPatientFromConsultation="ngForm"
+                  (ngSubmit)="selectPatient()"
                 >
-                  <div class="form-group">
+                  <div class="input-group">
                     <select
                       class="form-select"
-                      [(ngModel)]="consultation.patient"
+                      [(ngModel)]="patientSelectionner"
                       [ngModelOptions]="{ standalone: true }"
                     >
-                      <option [value]="undefined" selected>
+                      <option [value]="null" selected>
                         Choisir un patient
                       </option>
                       <option
@@ -40,40 +39,9 @@
                         {{ patient.nomPatient + " " + patient.prenomPatient }}
                       </option>
                     </select>
-                  </div>
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      [(ngModel)]="consultation.synthese"
-                      [ngModelOptions]="{ standalone: true }"
-                      [defaultValue]="consultation.synthese"
-                      placeholder="Synthese"
-                    />
-                  </div>
 
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      [(ngModel)]="consultation.act"
-                      [ngModelOptions]="{ standalone: true }"
-                      placeholder="Act"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <input
-                      type="date"
-                      class="form-control"
-                      [(ngModel)]="consultation.date_consultation"
-                      [ngModelOptions]="{ standalone: true }"
-                      placeholder="Nom"
-                    />
-                  </div>
-
-                  <div class="form-group">
-                    <button type="submit" class="btn btn-primary">
-                      Ajouter
+                    <button type="submit" class="ml-1 btn btn-primary rounded">
+                      Ajouter Patient
                     </button>
                   </div>
                 </form>

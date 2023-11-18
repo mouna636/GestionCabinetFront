@@ -22,46 +22,65 @@
 
                 <!-- <div class="align-items-stretch" data-aos="zoom-in" data-aos-delay="100"> </div>
                 <div class="icon-box"> </div> -->
-
-                <table class="table table-striped">
-                  <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>Date consultation</th>
-                      <th>Synthese</th>
-                      <th>act</th>
-                      <th>Patient</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr *ngFor="let i of consultations">
-                      <th>{{ i.id }}</th>
-                      <td>{{ i.date_consultation }}</td>
-                      <td>{{ i.Synthese }}</td>
-                      <td>{{ i.act }}</td>
-                      <td>
-                        {{
-                          i.patient.nomPatient + " " + i.patient.prenomPatient
-                        }}
-                      </td>
-                      <td>
-                        <button
-                          class="btn btn-primary btn-sm mr-2"
-                          (click)="gotToEditConsultation(i.id)"
-                        >
-                          Edit
-                        </button>
-                        <button
-                          class="btn btn-danger btn-sm"
-                          (click)="deleteConsultation(i.id)"
-                        >
-                          Delete
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div class="table-responsive">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Date consultation</th>
+                        <th>Motif</th>
+                        <th>diagnostique</th>
+                        <th>ResExamClinique</th>
+                        <th>poids</th>
+                        <th>taille</th>
+                        <th>imc</th>
+                        <th>temperature</th>
+                        <th>FréquenceCardiaque</th>
+                        <th>PressionArtielle</th>
+                        <th>Observation</th>
+                        <th>Patient</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let i of consultations">
+                        <th>{{ i.id }}</th>
+                        <td>
+                          {{ i.date_consultation }}
+                        </td>
+                        <td>{{ i.motif }}</td>
+                        <td>{{ i.diagnostique }}</td>
+                        <td>{{ i.resExamClinique }}</td>
+                        <td>{{ i.poids }}</td>
+                        <td>{{ i.taille }}</td>
+                        <td>{{ i.imc }}</td>
+                        <td>{{ i.temperature }}</td>
+                        <td>{{ i.freqCardiaque }}</td>
+                        <td>{{ i.pressionArterielle }}</td>
+                        <td>{{ i.observation }}</td>
+                        <td>
+                          {{
+                            i.patient.nomPatient + " " + i.patient.prenomPatient
+                          }}
+                        </td>
+                        <td>
+                          <button
+                            class="btn btn-primary btn-sm mr-2"
+                            (click)="gotToEditConsultation(i.id)"
+                          >
+                            Edit
+                          </button>
+                          <button
+                            class="btn btn-danger btn-sm"
+                            (click)="deleteConsultation(i.id)"
+                          >
+                            Delete
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </section>
             <!-- Modal Logout -->

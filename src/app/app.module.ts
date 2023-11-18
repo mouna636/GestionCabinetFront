@@ -28,6 +28,12 @@ import { ListConsultationComponent } from './list-consultation/list-consultation
 import { ListPatientComponent } from './list-patient/list-patient.component';
 import { EditConsultationComponent } from './edit-consultation/edit-consultation.component';
 import { EditPatientComponent } from './edit-patient/edit-patient.component';
+import { AjoutConsultationV2Component } from './ajout-consultation-v2/ajout-consultation-v2.component';
+import { AjoutConsultationMainComponent } from './ajout-consultation-main/ajout-consultation-main.component';
+import { InformationClientComponent } from './information-client/information-client.component';
+import { DatePipe } from '@angular/common';
+import { HistoriquePatientComponent } from './historique-patient/historique-patient.component';
+import { PaperCardComponent } from './paper-card/paper-card.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +50,7 @@ import { EditPatientComponent } from './edit-patient/edit-patient.component';
     AjoutInfermierComponent,
     ListInfermierComponent,
     CabinetPatientComponent,
-   
+
     EditInfermierComponent,
     DashboardStatComponent,
     SideBarComponent,
@@ -56,18 +62,14 @@ import { EditPatientComponent } from './edit-patient/edit-patient.component';
     ListPatientComponent,
     EditConsultationComponent,
     EditPatientComponent,
-   
-    
+    AjoutConsultationV2Component,
+    AjoutConsultationMainComponent,
+    InformationClientComponent,
+    HistoriquePatientComponent,
+    PaperCardComponent,
   ],
-  imports: [
-    BrowserModule,
-     FormsModule,
-    AppRoutingModule,
-    HttpClientModule
-
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
+  providers: [DatePipe],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
-

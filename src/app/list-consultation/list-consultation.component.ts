@@ -16,11 +16,18 @@ export class ListConsultationComponent {
   ) {}
 
   ngOnInit() {
-    this.getConsultationFromService();
+    this.getConsultationsFromService();
+    console.log(this.consultations);
   }
-
-  getConsultationFromService() {
+  getConsultationsFromService() {
     this.consultationService.getAllConsultations().subscribe((data) => {
+      for (const consultation of data) {
+        if (consultation.date_consultation) {
+          consultation.date_consultation = this.consultationService.formatDate(
+            consultation.date_consultation
+          );
+        } else consultation.date_consultation = 'Pas de date';
+      }
       this.consultations = data;
     });
   }
@@ -33,7 +40,7 @@ export class ListConsultationComponent {
   //Bouton Delete
   deleteConsultation(id: any) {
     this.consultationService.deleteConsultation(id).subscribe(() => {
-      this.getConsultationFromService();
+      this.getConsultationsFromService();
     });
   }
 }

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body id="page-top">
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <app-side-bar></app-side-bar>
+      <!-- Sidebar -->
+
+      <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+          <!-- TopBar -->
+          <app-top-bar></app-top-bar>
+          <!-- Topbar -->
+
+          <!-- Container Fluid-->
+          <div class="container-fluid" id="container-wrapper">
+            <section id="services" class="services section-bg">
+              <div class="container" data-aos="fade-up">
+                <div class="d-flex justify-content-between">
+                  <p class="muted">
+                    Patient:
+                    <b>{{
+                      selectedPatient.nomPatient +
+                        " " +
+                        selectedPatient.prenomPatient
+                    }}</b
+                    >, Age: <b>{{ selectedPatientAge + " ans" }}</b>
+                  </p>
+                  <form #addConsultationDateForm="ngForm">
+                    <div class="form-group">
+                      <input
+                        class="form-control border border-primary"
+                        type="date"
+                        [(ngModel)]="consultation.date_consultation"
+                        [ngModelOptions]="{ standalone: true }"
+                      />
+                    </div>
+                  </form>
+                </div>
+
+                <div class="d-flex flex-row flex-wrap gap-2 mb-4">
+                  <button class="btn btn-primary">
+                    <i class="bi bi-clipboard-check-fill"></i>
+                    Ordonnance
+                  </button>
+                  <button class="btn btn-primary">
+                    <i class="bi bi-card-list"></i>
+                    Bilan
+                  </button>
+                  <button class="btn btn-primary">
+                    <i class="bi bi-hourglass-bottom"></i>
+                    Arrét de travail
+                  </button>
+                  <button class="btn btn-primary">
+                    <i class="bi bi-body-text"></i>
+                    Certificat médical
+                  </button>
+                </div>
+                <div class="d-flex flex-row flex-wrap gap-2 mb-4">
+                  <form>
+                    <div
+                      class="btn-group rounded"
+                      role="group"
+                      aria-label="Basic radio toggle button group"
+                    >
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="btnradio"
+                        [(ngModel)]="selectedRadioButton"
+                        value="ficheConsultation"
+                        id="btnradio1"
+                        autocomplete="off"
+                        checked
+                      />
+                      <label class="btn btn-outline-primary" for="btnradio1"
+                        >Fiche de consultation</label
+                      >
+
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="btnradio"
+                        [(ngModel)]="selectedRadioButton"
+                        value="informations"
+                        id="btnradio2"
+                        autocomplete="off"
+                      />
+                      <label class="btn btn-outline-primary" for="btnradio2"
+                        >Informations</label
+                      >
+
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="btnradio"
+                        id="btnradio3"
+                        [(ngModel)]="selectedRadioButton"
+                        value="prochainRdv"
+                        autocomplete="off"
+                      />
+                      <label class="btn btn-outline-primary" for="btnradio3"
+                        >Prochain RDV</label
+                      >
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="btnradio"
+                        id="btnradio4"
+                        [(ngModel)]="selectedRadioButton"
+                        value="historique"
+                        autocomplete="off"
+                      />
+                      <label class="btn btn-outline-primary" for="btnradio4"
+                        >Historique</label
+                      >
+                    </div>
+                  </form>
+                </div>
+                <hr class="w-100 h-10 bg-dark" />
+
+                <form
+                  class="bg-light p-4 rounded border border-primary"
+                  #addConsultationForm="ngForm"
+                  *ngIf="selectedRadioButton === 'ficheConsultation'"
+                  (ngSubmit)="saveConsultation()"
+                >
+                  <div class="row">
+                    <div class="col">
+                      <h2>Géneral</h2>
+                      <hr class="w-100 h-10 bg-dark" />
+                      <div class="form-group">
+                        <label>Motif</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          [(ngModel)]="consultation.motif"
+                          [ngModelOptions]="{ standalone: true }"
+                          placeholder="Le motif de consultation"
+                        />
+                      </div>
+
+                      <div class="form-group">
+                        <label>Diagnostique médicale</label>
+                        <select
+                          class="form-select"
+                          [(ngModel)]="consultation.diagnostique"
+                          [ngModelOptions]="{ standalone: true }"
+                        >
+                          <option [value]="undefined" selected>
+                            Choisir un diagnostique
+                          </option>
+                          <option
+                            *ngFor="let diagno of diagnostiques"
+                            [ngValue]="diagno.value"
+                          >
+                            {{ diagno.label }}
+                          </option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label>Résultat examen clinique</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          [(ngModel)]="consultation.resExamClinique"
+                          [ngModelOptions]="{ standalone: true }"
+                          placeholder="Examen clinique"
+                        />
+                      </div>
+                    </div>
+                    <div class="col">
+                      <h2>Constantes vitales</h2>
+                      <hr class="w-100 h-10 bg-dark" />
+
+                      <div class="form-group">
+                        <label>Poids (kg)</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          [(ngModel)]="consultation.poids"
+                          [ngModelOptions]="{ standalone: true }"
+                          (keyup)="calculateIMC()"
+                          placeholder="Le poids en kg"
+                        />
+                      </div>
+
+                      <div class="form-group">
+                        <label>Taille (cm)</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          [(ngModel)]="consultation.taille"
+                          [ngModelOptions]="{ standalone: true }"
+                          (keyup)="calculateIMC()"
+                          placeholder="Le taille en cm"
+                        />
+                      </div>
+
+                      <div class="form-group">
+                        <label>IMC</label>
+                        <div class="input-group">
+                          <input
+                            type="text"
+                            class="form-control"
+                            [(ngModel)]="consultation.imc"
+                            [(value)]="consultation.imc"
+                            [ngModelOptions]="{ standalone: true }"
+                            placeholder="IMC"
+                            disabled
+                          />
+                          <span class="input-group-text" id="basic-addon2"
+                            >kg/m<sup>2</sup></span
+                          >
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Temperature</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          [(ngModel)]="consultation.temperature"
+                          [ngModelOptions]="{ standalone: true }"
+                          placeholder="La temperature en Celsius"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label>Fréquence Cardiaque</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          [(ngModel)]="consultation.freqCardiaque"
+                          [ngModelOptions]="{ standalone: true }"
+                          placeholder="Fréquence Cardiaque"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label>Pression arterielle</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          [(ngModel)]="consultation.pressionArterielle"
+                          [ngModelOptions]="{ standalone: true }"
+                          placeholder="Pression arterielle"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          [(ngModel)]="consultation.observation"
+                          [ngModelOptions]="{ standalone: true }"
+                          placeholder="Observation"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-primary">
+                      Ajouter
+                    </button>
+                  </div>
+                </form>
+
+                <div *ngIf="selectedRadioButton === 'informations'">
+                  <app-information-client
+                    [patient]="selectedPatient"
+                  ></app-information-client>
+                </div>
+                <div *ngIf="selectedRadioButton === 'historique'">
+                  <app-historique-patient
+                    [patient]="selectedPatient"
+                  ></app-historique-patient>
+                </div>
+                <!-- Modal Logout -->
+                <div
+                  class="modal fade"
+                  id="logoutModal"
+                  tabindex="-1"
+                  role="dialog"
+                  aria-labelledby="exampleModalLabelLogout"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabelLogout">
+                          Ohh No!
+                        </h5>
+                        <button
+                          type="button"
+                          class="close"
+                          data-dismiss="modal"
+                          aria-label="Close"
+                        >
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <p>Are you sure you want to logout?</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-outline-primary"
+                          data-dismiss="modal"
+                        >
+                          Cancel
+                        </button>
+                        <a href="login.html" class="btn btn-primary">Logout</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <!---Container Fluid-->
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll to top -->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+  </body>
+</html>

@@ -1,19 +1,29 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import * as moment from 'moment';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ConsultationService {
   ConsultationUrl: string = 'http://localhost:8080/consultations';
+  private selectedPatientSource = new BehaviorSubject<any>(null);
+  selectedPatient$ = this.selectedPatientSource.asObservable();
 
   constructor(private httpClient: HttpClient) {}
 
+  calculateAge(dateOfBirth: Date): number {
+    const today = moment();
+    const birthDate = moment(dateOfBirth, 'YYYY-MM-DD');
+    return today.diff(birthDate, 'years');
+  }
   getConsultationById(id: any): Observable<any> {
     return this.httpClient.get(this.ConsultationUrl + '/' + id);
   }
-
+  setSelectedPatient(patient: any) {
+    this.selectedPatientSource.next(patient);
+  }
   getAllConsultations(): Observable<any> {
     return this.httpClient.get(this.ConsultationUrl);
   }
@@ -28,5 +38,17 @@ export class ConsultationService {
 
   deleteConsultation(id: number): Observable<any> {
     return this.httpClient.delete(this.ConsultationUrl + '/' + id);
+  }
+
+  getConsultationsByPatientId(id: number): Observable<any> {
+    return this.httpClient.get(this.ConsultationUrl + '/patient/' + id);
+  }
+
+  formatDate(date: Date): String {
+    return new Date(date).toLocaleDateString('fr-FR', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    });
   }
 }

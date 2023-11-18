@@ -1,0 +1,37 @@
+<div class="container">
+  <div
+    class="d-flex flex-wrap flex-row"
+    *ngFor="let cons of consultationsPatient"
+  >
+    <div class="d-flex flex-column">
+      <h4>
+        <b
+          ><span class="badge badge-secondary">{{
+            cons.date_consultation
+          }}</span></b
+        >
+      </h4>
+
+      <div class="d-flex flex-row flex-wrap">
+        <app-paper-card [consultationDiag]="cons.diagnostique"></app-paper-card>
+        <app-paper-card
+          [consultationFreq]="cons.freqCardiaque"
+        ></app-paper-card>
+        <app-paper-card
+          [consultationPression]="cons.pressionArterielle"
+        ></app-paper-card>
+        <app-paper-card [consultationImc]="cons.imc"></app-paper-card>
+        <app-paper-card [consultationMotif]="cons.motif"></app-paper-card>
+        <app-paper-card [consultationTaille]="cons.taille"></app-paper-card>
+        <app-paper-card [consultationPoids]="cons.poids"></app-paper-card>
+        <app-paper-card
+          [consultationResExam]="cons.resExamClinique"
+        ></app-paper-card>
+        <app-paper-card [consultationTemp]="cons.temperature"></app-paper-card>
+        <app-paper-card
+          [consultationObservation]="cons.observation"
+        ></app-paper-card>
+      </div>
+    </div>
+  </div>
+</div>
