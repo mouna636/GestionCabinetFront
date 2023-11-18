@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body id="page-top">
+  <div id="wrapper">
+    <!-- Sidebar -->
+  <app-side-bar></app-side-bar>
+    <!-- Sidebar -->
+
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+
+        <!-- TopBar -->
+       <app-top-bar></app-top-bar>
+        <!-- Topbar -->
+
+        <!-- Interface ajout ordonnance -->
+        <div class="container-fluid" id="container-wrapper">
+         <section id="services" class="services section-bg">
+            <div class="container" data-aos="fade-up"> 
+              <div class="section-title">
+                <h2>Ajouter un ordonnance</h2>
+              </div>
+
+               <form  class="bordered-form" #addPatientForm='ngForm' #addOrdonnanceTraitementForm>    <!-- class="bordered-form" pour entourer la formulaire par un cadre -->
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-sm-5">
+
+                      <!-- Liste roulante -->
+                      <div style="position: relative;">
+                      <select class="form-control"  style="background-color: #6777ef; color: #fff; padding-right: 30px;">
+                        <option [value]="undefined" selected >Type d'Ordonnance </option> 
+                        <option value="Ordonnance médicale" style="background-color: #6777ef;">Ordonnance médicale</option>
+                        <option value="Ordonnance chirurgicale" style="background-color: #6777ef;">Ordonnance chirurgicale</option>
+                        <option value="Ordonnance d'arrêt de travail" style="background-color: #6777ef;">Ordonnance d'arrêt de travail</option>
+                      </select>
+                      <i class="fas fa-chevron-down" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%);"></i>
+                    </div>
+                    </div>
+                    <div  class="col-sm-5">
+                      <button type="button" class="btn btn-primary mr-3"  printSectionId="print_ordonnance" ngxPrint  >Aperçu et Imprimer</button>
+                      
+
+                    </div>
+                  </div>
+                </div>
+                <!-- Les Champs de formulaire -->
+              <div >
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col">
+                      <input type="text" class="form-control" [(ngModel)]='patient.nomPatient' [ngModelOptions]="{standalone: true}" placeholder="Nom">
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" [(ngModel)]='patient.prenomPatient' [ngModelOptions]="{standalone: true}" placeholder="Prenom">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col">
+                      <input type="text" class="form-control" [(ngModel)]='patient.dateNaissance' [ngModelOptions]="{standalone: true}" placeholder="Age">
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" [(ngModel)]='ordonnanceTraitement.dateOrdonnance' [ngModelOptions]="{standalone: true}" placeholder="Date">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </form>
+            </div> 
+        </section>
+      <div class="container-fluid" id="container-wrapper">
+        <section>
+          <div class="container" data-aos="fade-up"> 
+                  <!-- Tableau d'ajout médicaments-->
+                  <form  class="bordered-form form-table-container" #addPatientForm='ngForm' #addOrdonnanceTraitementForm  #addMedicamentForm>
+                      <table class="bordered-form">
+                          <thead>
+                              <tr>
+                                  <th>Médicament</th>
+                                  <th>Posologie</th>
+                                  <th>Nombre d'unité</th>
+                                  <th>QSP</th>
+                                  <th>Actions</th>
+                              </tr>
+                          </thead> 
+                          <tbody>
+                              <tr *ngFor="let medicament of medicaments">
+                              
+                                  <td><input type="text" class="form-control" [(ngModel)]='medicament.nom' name="nomMedicament" placeholder="Médicament"></td>
+                                  <td><input type="text" class="form-control" [(ngModel)]='medicament.posologie' name="posologie" placeholder="Posologie"></td>
+                                  <td><input type="text" class="form-control" [(ngModel)]='medicament.nombreUnite' name="nombreUnite" placeholder="Nombre d'unité"></td>
+                                  <td><input type="text" class="form-control" [(ngModel)]='medicament.qsp' name="qsp" placeholder="QSP"></td>
+                                  <td><button type="button" class="btn btn-danger" (click)="removeMedicament(medicament)"><i class="fas fa-trash-alt"></i></button></td>
+                              </tr>
+                          </tbody>
+                      </table>
+      
+                      <!-- Bouton "Ajouter médicament" -->
+                      <div class="form-group">
+                          <button type="button" class="btn btn-primary mt-3" (click)="addMedicament()"><i class="fas fa-plus"></i>Ajouter médicament</button>
+                      </div>
+      
+                  </form>
+             
+                <div class="form-group mt-3 text-right">
+                  <button type="button" class="btn btn-light">Cancel</button>
+                  <button type="button" class="btn btn-success ml-2">Sauvegarder</button>
+              </div>
+          </div>
+              </section>
+            </div>
+
+          <section id ="print_ordonnance" class="d-none">
+            <div >
+
+              <h3>Prévisualisation de l'ordonnance</h3>
+
+              <p><strong>Date</strong> {{ ordonnanceTraitement.dateOrdonnance }}</p>
+              <p><strong>Nom du patient:</strong> {{ patient.nomPatient }}</p>
+                <p><strong>Prénom du patient:</strong> {{ patient.prenomPatient }}</p>
+                <p><strong>Date de naissance:</strong> {{ patient.dateNaissance }}</p>
+
+                <h4>Médicaments:</h4>
+                <ul>
+                  <li *ngFor="let medicament of previewData.medicaments">
+                    <p><strong>Nom:</strong> {{ medicament.nom }}</p>
+                    <p><strong>Posologie:</strong> {{ medicament.posologie }}</p>
+                    <p><strong>Nombre d'unité:</strong> {{ medicament.nombreUnite }}</p>
+                  </li>
+                </ul>
+
+            </div>
+            </section>
+        
+
+
+
+
+
+      
+         <!-- Modal Logout -->
+         <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
+           aria-hidden="true">
+           <div class="modal-dialog" role="document">
+             <div class="modal-content">
+               <div class="modal-header">
+                 <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+                 </button>
+               </div>
+               <div class="modal-body">
+                 <p>Are you sure you want to logout?</p>
+               </div>
+               <div class="modal-footer">
+                 <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
+                 <a href="login.html" class="btn btn-primary">Logout</a>
+               </div>
+             </div>
+           </div>
+         </div>
+
+       </div>
+       <!---Container Fluid-->
+     </div>
+
+   </div>
+ </div>
+
+ <!-- Scroll to top -->
+ <a class="scroll-to-top rounded" href="#page-top">
+   <i class="fas fa-angle-up"></i>
+ </a>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+ 
+
+
+
+ 
+ 
+
+
+

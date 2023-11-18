@@ -10,7 +10,7 @@ import { SectionComponent } from './section/section.component';
 import { ContactComponent } from './contact/contact.component';
 import { AjoutCabinetComponent } from './ajout-cabinet/ajout-cabinet.component';
 import { ListCabinetComponent } from './list-cabinet/list-cabinet.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardDoctorComponent } from './dashboard-doctor/dashboard-doctor.component';
 import { DashboardInfermierComponent } from './dashboard-infermier/dashboard-infermier.component';
 import { AjoutInfermierComponent } from './ajout-infermier/ajout-infermier.component';
@@ -34,6 +34,9 @@ import { InformationClientComponent } from './information-client/information-cli
 import { DatePipe } from '@angular/common';
 import { HistoriquePatientComponent } from './historique-patient/historique-patient.component';
 import { PaperCardComponent } from './paper-card/paper-card.component';
+import { AjoutOrdonnanceComponent } from './ajout-ordonnance/ajout-ordonnance.component';
+import { MedicamentComponent } from './medicament/medicament.component';
+import { NgxPrintModule } from 'ngx-print';
 
 @NgModule({
   declarations: [
@@ -67,8 +70,17 @@ import { PaperCardComponent } from './paper-card/paper-card.component';
     InformationClientComponent,
     HistoriquePatientComponent,
     PaperCardComponent,
+    AjoutOrdonnanceComponent,
+    MedicamentComponent,
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    NgxPrintModule,
+  ],
   providers: [DatePipe],
   bootstrap: [AppComponent],
 })
