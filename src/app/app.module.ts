@@ -10,7 +10,7 @@ import { SectionComponent } from './section/section.component';
 import { ContactComponent } from './contact/contact.component';
 import { AjoutCabinetComponent } from './ajout-cabinet/ajout-cabinet.component';
 import { ListCabinetComponent } from './list-cabinet/list-cabinet.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardDoctorComponent } from './dashboard-doctor/dashboard-doctor.component';
 import { DashboardInfermierComponent } from './dashboard-infermier/dashboard-infermier.component';
 import { AjoutInfermierComponent } from './ajout-infermier/ajout-infermier.component';
@@ -29,6 +29,9 @@ import { ListPatientComponent } from './list-patient/list-patient.component';
 import { EditConsultationComponent } from './edit-consultation/edit-consultation.component';
 import { EditPatientComponent } from './edit-patient/edit-patient.component';
 import { AjoutOrdonnanceComponent } from './ajout-ordonnance/ajout-ordonnance.component';
+import { MedicamentComponent } from './medicament/medicament.component';
+import { NgxPrintModule } from 'ngx-print';
+
 
 @NgModule({
   declarations: [
@@ -58,6 +61,7 @@ import { AjoutOrdonnanceComponent } from './ajout-ordonnance/ajout-ordonnance.co
     EditConsultationComponent,
     EditPatientComponent,
     AjoutOrdonnanceComponent,
+    MedicamentComponent,
    
     
   ],
@@ -65,7 +69,9 @@ import { AjoutOrdonnanceComponent } from './ajout-ordonnance/ajout-ordonnance.co
     BrowserModule,
      FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    NgxPrintModule,
 
   ],
   providers: [],

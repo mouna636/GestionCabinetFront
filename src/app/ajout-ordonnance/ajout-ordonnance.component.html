@@ -39,13 +39,15 @@
                       <i class="fas fa-chevron-down" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%);"></i>
                     </div>
                     </div>
-                    <div class="col-sm-5">
-                      <button type="button" class="btn btn-primary mr-3">Aperçu et Imprimer</button>
-                      <button type="button" class="btn btn-primary mr-3">Imprimer</button>
+                    <div  class="col-sm-5">
+                      <button type="button" class="btn btn-primary mr-3"  printSectionId="print_ordonnance" ngxPrint  >Aperçu et Imprimer</button>
+                      
+
                     </div>
                   </div>
                 </div>
                 <!-- Les Champs de formulaire -->
+              <div >
                 <div class="form-group">
                   <div class="row">
                     <div class="col">
@@ -66,14 +68,15 @@
                     </div>
                   </div>
                 </div>
+              </div>
               </form>
             </div> 
         </section>
       <div class="container-fluid" id="container-wrapper">
         <section>
           <div class="container" data-aos="fade-up"> 
-                  <!-- Tableau -->
-                  <form class="bordered-form form-table-container" #addPatientForm='ngForm' #addOrdonnanceTraitementForm>
+                  <!-- Tableau d'ajout médicaments-->
+                  <form  class="bordered-form form-table-container" #addPatientForm='ngForm' #addOrdonnanceTraitementForm  #addMedicamentForm>
                       <table class="bordered-form">
                           <thead>
                               <tr>
@@ -85,19 +88,20 @@
                               </tr>
                           </thead> 
                           <tbody>
-                              <tr >
-                                  <td><input type="text" class="form-control" [(ngModel)]='ordonnanceTraitement.medicament' name="nomMedicament" placeholder="Médicament"></td>
-                                  <td><input type="text" class="form-control" [(ngModel)]='ordonnanceTraitement.posologie' name="posologie" placeholder="Posologie"></td>
-                                  <td><input type="text" class="form-control" [(ngModel)]='ordonnanceTraitement.nombreUnite' name="nombreUnite" placeholder="Nombre d'unité"></td>
-                                  <td><input type="text" class="form-control" [(ngModel)]='ordonnanceTraitement.qsp' name="qsp" placeholder="QSP"></td>
-                                  <td><button type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button></td>
+                              <tr *ngFor="let medicament of medicaments">
+                              
+                                  <td><input type="text" class="form-control" [(ngModel)]='medicament.nom' name="nomMedicament" placeholder="Médicament"></td>
+                                  <td><input type="text" class="form-control" [(ngModel)]='medicament.posologie' name="posologie" placeholder="Posologie"></td>
+                                  <td><input type="text" class="form-control" [(ngModel)]='medicament.nombreUnite' name="nombreUnite" placeholder="Nombre d'unité"></td>
+                                  <td><input type="text" class="form-control" [(ngModel)]='medicament.qsp' name="qsp" placeholder="QSP"></td>
+                                  <td><button type="button" class="btn btn-danger" (click)="removeMedicament(medicament)"><i class="fas fa-trash-alt"></i></button></td>
                               </tr>
                           </tbody>
                       </table>
       
                       <!-- Bouton "Ajouter médicament" -->
                       <div class="form-group">
-                          <button type="button" class="btn btn-primary mt-3"><i class="fas fa-plus"></i>Ajouter médicament</button>
+                          <button type="button" class="btn btn-primary mt-3" (click)="addMedicament()"><i class="fas fa-plus"></i>Ajouter médicament</button>
                       </div>
       
                   </form>
@@ -109,19 +113,35 @@
           </div>
               </section>
             </div>
+
+          <section id ="print_ordonnance" class="d-none">
+            <div >
+
+              <h3>Prévisualisation de l'ordonnance</h3>
+
+              <p><strong>Date</strong> {{ ordonnanceTraitement.dateOrdonnance }}</p>
+              <p><strong>Nom du patient:</strong> {{ patient.nomPatient }}</p>
+                <p><strong>Prénom du patient:</strong> {{ patient.prenomPatient }}</p>
+                <p><strong>Date de naissance:</strong> {{ patient.dateNaissance }}</p>
+
+                <h4>Médicaments:</h4>
+                <ul>
+                  <li *ngFor="let medicament of previewData.medicaments">
+                    <p><strong>Nom:</strong> {{ medicament.nom }}</p>
+                    <p><strong>Posologie:</strong> {{ medicament.posologie }}</p>
+                    <p><strong>Nombre d'unité:</strong> {{ medicament.nombreUnite }}</p>
+                  </li>
+                </ul>
+
+            </div>
+            </section>
         
+
+
+
+
+
       
-
-
-
-
-
-
-
-
-
-
-        
          <!-- Modal Logout -->
          <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
            aria-hidden="true">
