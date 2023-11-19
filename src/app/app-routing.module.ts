@@ -20,6 +20,8 @@ import { DashboardInfermierComponent } from './dashboard-infermier/dashboard-inf
 import { AjoutPatientComponent } from './ajout-patient/ajout-patient.component';
 import { EditPatientComponent } from './edit-patient/edit-patient.component';
 import { ListPatientComponent } from './list-patient/list-patient.component';
+import { AjoutHoraireComponent } from './ajout-horaire/ajout-horaire.component';
+
 
 
 
@@ -36,7 +38,7 @@ const routes: Routes = [
   {path:'list-infermier',component:ListInfermierComponent},
   {path:'dashboard-infermier',component:DashboardDoctorComponent},
   {path:'cabinet-patient',component:CabinetPatientComponent},
-  
+  {path:'ajout-horaire/:cabinetId',component:AjoutHoraireComponent},
   {path: 'dashboard-doctor/ajout-infermier',component: AjoutInfermierComponent},
   { path: 'dashboard-doctor/list-infermier',component: ListInfermierComponent},
   {path: 'dashboard-doctor/edit-infermier/:id',component: EditInfermierComponent},
@@ -47,6 +49,7 @@ const routes: Routes = [
   {path: 'dashboard-infermier/ajout-patient',component: AjoutPatientComponent },
   {path: 'dashboard-infermier/edit-patient/:id',component: EditPatientComponent},
   {path: 'dashboard-infermier/list-patient',component: ListPatientComponent},
+  
   
 ];
 

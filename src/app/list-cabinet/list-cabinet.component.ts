@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CabinetService } from '../services/cabinet.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-cabinet',
@@ -10,8 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 export class ListCabinetComponent implements OnInit {
   cabinets:any;
   cabinetId:any;
-  horairesTravail:any;
-  constructor(private cabinetservice:CabinetService,private route: ActivatedRoute){}
+  
+  constructor(private cabinetservice:CabinetService,private router:Router){}
   ngOnInit(){
    this.getAllCabinetsFromService();
    
@@ -23,5 +23,7 @@ getAllCabinetsFromService(){
     }
   )
 }
-
+ajoutHoraire(cabinetId: any) {
+  this.router.navigate([`/ajout-horaire/${cabinetId}`]);
+}
 }

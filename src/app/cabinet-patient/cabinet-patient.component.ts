@@ -30,4 +30,12 @@ searchCabinetByAdresse(){
        }
   );
       }
+      
+      /* deleteCabinet(id:any){
+        this.cabinetservice.deleteCabinet(id).subscribe(
+          ()=>{
+            this.getAllCabinetsFromService();
+          }
+        )
+      } */
     }

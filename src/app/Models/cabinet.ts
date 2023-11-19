@@ -1,3 +1,5 @@
+import { FileHandle } from "./file-handle.Model";
+
 export class Cabinet{
     constructor(
         
@@ -7,12 +9,12 @@ export class Cabinet{
         telephone:string,
         specialite:string,
         matriculefiscale: String ,
-        photo: String ,
         ville: String ,
         codepostale: String ,
         email: String ,
         pwd: String ,
-        horairesTravail:any[]
+        cabinetImages:FileHandle[]
+       
        
         
         

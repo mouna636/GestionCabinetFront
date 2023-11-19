@@ -1,0 +1,20 @@
+
+<form #horaireForm='ngForm' (ngSubmit)="ajouterHoraire()">
+  <label for="date">Date :</label>
+  <div class="form-group">
+  <input type="date" id="date" class="form-control"  [(ngModel)]="horaireTravail.date" name="date" required>
+  </div>
+  <label for="heureDebut">Heure de début :</label>
+  <div class="form-group">
+  <input type="text" id="heureDebut" class="form-control" [(ngModel)]="horaireTravail.heureDebut" name="heureDebut" required>
+  </div>
+  <label for="heureFin">Heure de fin :</label>
+  <div class="form-group">
+  <input type="text" id="heureFin" class="form-control" [(ngModel)]="horaireTravail.heureFin" name="heureFin" required>
+  </div>
+  <label for="jourSemaine">Jour de la semaine :</label>
+  <div class="form-group">
+  <input type="text" id="jourSemaine" class="form-control"  [(ngModel)]="horaireTravail.jourSemaine" name="jourSemaine" required>
+  </div>
+  <button type="submit">Ajouter Horaire</button>
+</form>

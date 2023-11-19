@@ -11,6 +11,7 @@
 <th scope="col">CodePostale</th>
 <th scope="col">Email</th>
 <th scope="col">Password</th>
+<th scope="col">Actions</th>
 </tr>
 </thead>
 <tbody>
@@ -24,9 +25,10 @@
 <td>{{c.ville}}</td> 
 <td>{{c.codepostale}}</td>
 <td>{{c.email}}</td>   
-<td>{{c.pwd}}</td>  
-   
-   
+<td>{{c.pwd}}</td>    
+<td>
+  <button class="btn btn-danger btn-sm" (click)="ajoutHoraire(c.id)">AddHoraire</button>
+</td>  
 </tr>
 </tbody>
 </table>
