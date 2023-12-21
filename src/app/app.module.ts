@@ -28,8 +28,8 @@ import { ListPatientComponent } from './list-patient/list-patient.component';
 import { EditConsultationComponent } from './edit-consultation/edit-consultation.component';
 import { EditPatientComponent } from './edit-patient/edit-patient.component';
 import { AjoutHoraireComponent } from './ajout-horaire/ajout-horaire.component';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { DatePipe } from '@angular/common';
 import { HistoriquePatientComponent } from './historique-patient/historique-patient.component';
 import { PaperCardComponent } from './paper-card/paper-card.component';
@@ -42,6 +42,9 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { XhrInterceptor } from './services/xhr.interceptor';
 import { AddCabinetComponent } from './add-cabinet/add-cabinet.component';
+import { InformationClientComponent } from './information-client/information-client.component';
+import { AjoutConsultationV2Component } from './ajout-consultation-v2/ajout-consultation-v2.component';
+import { AjoutConsultationMainComponent } from './ajout-consultation-main/ajout-consultation-main.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +54,7 @@ import { AddCabinetComponent } from './add-cabinet/add-cabinet.component';
     FooterComponent,
     SectionComponent,
     ContactComponent,
+    InformationClientComponent,
     AjoutCabinetComponent,
     ListCabinetComponent,
     DashboardDoctorComponent,
@@ -65,6 +69,8 @@ import { AddCabinetComponent } from './add-cabinet/add-cabinet.component';
     SideBarInfComponent,
     AjoutPatientComponent,
     AjoutConsultationComponent,
+    AjoutConsultationV2Component,
+    AjoutConsultationMainComponent,
     ListConsultationComponent,
     ListPatientComponent,
     EditConsultationComponent,
@@ -85,15 +91,15 @@ import { AddCabinetComponent } from './add-cabinet/add-cabinet.component';
     AppRoutingModule,
     HttpClientModule,
     MatGridListModule,
-   ReactiveFormsModule,
+    ReactiveFormsModule,
     NgxPrintModule,
     MatToolbarModule,
     BrowserAnimationsModule,
-
-    
   ],
-  providers: [DatePipe,{provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true}  ],
+  providers: [
+    DatePipe,
+    { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
-  
 })
 export class AppModule {}
