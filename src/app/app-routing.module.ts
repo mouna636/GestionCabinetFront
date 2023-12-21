@@ -1,75 +1,8 @@
-
 import { AjoutConsultationMainComponent } from './ajout-consultation-main/ajout-consultation-main.component';
 import { AjoutConsultationV2Component } from './ajout-consultation-v2/ajout-consultation-v2.component';
 import { ListOrdonnancesComponent } from './list-ordonnances/list-ordonnances.component';
 import { AjoutOrdonnanceSelectPatientComponent } from './ajout-ordonnance-select-patient/ajout-ordonnance-select-patient.component';
 import { AjoutOrdonnanceMainComponent } from './ajout-ordonnance-main/ajout-ordonnance-main.component';
-
-const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'footer', component: FooterComponent },
-  { path: 'header', component: HeaderComponent },
-  { path: 'section', component: SectionComponent },
-  { path: 'ajout-cabinet', component: AjoutCabinetComponent },
-  { path: 'list-cabinet', component: ListCabinetComponent },
-  { path: 'dashboard-doctor', component: DashboardDoctorComponent },
-  { path: 'ajout-infermier', component: AjoutInfermierComponent },
-  { path: 'list-infermier', component: ListInfermierComponent },
-  { path: 'cabinet-patient', component: CabinetPatientComponent },
-
- 
-
-  {path: 'contact', component: ContactComponent},
-  {path: 'footer', component: FooterComponent},
-  { path: 'header', component: HeaderComponent},
-  {path: 'section', component: SectionComponent},
-  {path:'ajout-cabinet', component:AjoutCabinetComponent},
-  {path:'list-cabinet',component:ListCabinetComponent},
-  {path:'dashboard-doctor',component:DashboardDoctorComponent},
-  {path:'ajout-infermier',component:AjoutInfermierComponent},
-  {path:'list-infermier',component:ListInfermierComponent},
-  {path:'cabinet-patient',component:CabinetPatientComponent},
-  {path: 'ajout-ordonnance', component: AjoutOrdonnanceComponent},
-  {path:'list-ordonnances', component: ListOrdonnancesComponent},
-  
-  {path: 'dashboard-doctor/ajout-infermier',component: AjoutInfermierComponent,},
-  {path: 'dashboard-doctor/list-infermier',component: ListInfermierComponent,},
-  {path: 'dashboard-doctor/edit-infermier/:id',component: EditInfermierComponent,},
-  {path: 'dashboard-doctor/ajout-consultation',component: AjoutConsultationMainComponent,},
-  {path: 'dashboard-doctor/edit-consultation/:id',component: EditConsultationComponent,},
-  {path: 'dashboard-doctor/list-consultation',component: ListConsultationComponent, },
-  {path: 'dashboard-doctor/ajout-infermier',component: AjoutInfermierComponent},
-  { path: 'dashboard-doctor/list-infermier',component: ListInfermierComponent},
-  {path: 'dashboard-doctor/edit-infermier/:id',component: EditInfermierComponent},
-  {path: 'dashboard-doctor/ajout-consultation',component: AjoutConsultationComponent},
-  {path: 'dashboard-doctor/edit-consultation/:id',component: EditConsultationComponent},
-  {path: 'dashboard-doctor/list-consultation',component: ListConsultationComponent },
-  
-//  {path:'dashboard-doctor/ajout-ordonnance',component: AjoutOrdonnanceComponent},
-  //{path:'dashboard-doctor/ajout-ordonnance-select-patient',component: AjoutOrdonnanceSelectPatientComponent},
-  {path:'dashboard-doctor/app-ajout-ordonnance-main',component: AjoutOrdonnanceMainComponent},
-  
-
-
-
-  {path: 'dashboard-infermier', component: DashboardInfermierComponent },
-  {path: 'dashboard-infermier/ajout-patient',component: AjoutPatientComponent,},
-  {path: 'dashboard-infermier/edit-patient/:id',component: EditPatientComponent,},
-  { path: 'dashboard-infermier/list-patient', component: ListPatientComponent },
-  {path: 'dashboard-infermier/list-patient',component: ListPatientComponent,},
-  {path: 'dashboard-infermier/ajout-patient',component: AjoutPatientComponent },
-  {path: 'dashboard-infermier/edit-patient/:id',component: EditPatientComponent},
-  {path: 'dashboard-infermier/list-patient',component: ListPatientComponent},
- 
-  
-];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-})
-export class AppRoutingModule {}
 
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -113,25 +46,66 @@ const routes: Routes = [
   { path: 'ajout-infermier', component: AjoutInfermierComponent },
   { path: 'list-infermier', component: ListInfermierComponent },
   { path: 'cabinet-patient', component: CabinetPatientComponent },
-  {path:'addCabinet',component:AddCabinetComponent},
-  {path: 'dashboard-doctor/ajout-infermier',component: AjoutInfermierComponent},
-  { path: 'dashboard-doctor/list-infermier',component: ListInfermierComponent},
-  {path: 'dashboard-doctor/edit-infermier/:id',component: EditInfermierComponent},
-  {path: 'dashboard-doctor/ajout-consultation',component: AjoutConsultationComponent},
-  {path: 'dashboard-doctor/edit-consultation/:id',component: EditConsultationComponent},
-  {path: 'dashboard-doctor/list-consultation',component: ListConsultationComponent },
-  {path:'dashboard-doctor/ajout-ordonnance',component: AjoutOrdonnanceComponent},
-  { path: 'dashboard-infermier', component: DashboardInfermierComponent },
-  {path: 'ajout-ordonnance', component: AjoutOrdonnanceComponent},
-  {path: 'dashboard-infermier/ajout-patient',component: AjoutPatientComponent },
-  {path: 'dashboard-infermier/edit-patient/:id',component: EditPatientComponent},
-  {path: 'dashboard-infermier/list-patient',component: ListPatientComponent},
-  {path: 'nav',component: NavComponent},
-  {path: 'signup',component:SignupComponent },
-  {path: 'login',component:LoginComponent}
-  
-];
 
+  { path: 'ajout-ordonnance', component: AjoutOrdonnanceComponent },
+  { path: 'list-ordonnances', component: ListOrdonnancesComponent },
+
+  {
+    path: 'dashboard-doctor/ajout-infermier',
+    component: AjoutInfermierComponent,
+  },
+  {
+    path: 'dashboard-doctor/list-infermier',
+    component: ListInfermierComponent,
+  },
+  {
+    path: 'dashboard-doctor/edit-infermier/:id',
+    component: EditInfermierComponent,
+  },
+
+  {
+    path: 'dashboard-doctor/ajout-consultation',
+    component: AjoutConsultationMainComponent,
+  },
+  {
+    path: 'dashboard-doctor/edit-consultation/:id',
+    component: EditConsultationComponent,
+  },
+  {
+    path: 'dashboard-doctor/list-consultation',
+    component: ListConsultationComponent,
+  },
+
+  //  {path:'dashboard-doctor/ajout-ordonnance',component: AjoutOrdonnanceComponent},
+  //{path:'dashboard-doctor/ajout-ordonnance-select-patient',component: AjoutOrdonnanceSelectPatientComponent},
+  {
+    path: 'dashboard-doctor/app-ajout-ordonnance-main',
+    component: AjoutOrdonnanceMainComponent,
+  },
+
+  { path: 'dashboard-infermier', component: DashboardInfermierComponent },
+  {
+    path: 'dashboard-infermier/ajout-patient',
+    component: AjoutPatientComponent,
+  },
+  {
+    path: 'dashboard-infermier/edit-patient/:id',
+    component: EditPatientComponent,
+  },
+  { path: 'dashboard-infermier/list-patient', component: ListPatientComponent },
+
+  { path: 'cabinet-patient', component: CabinetPatientComponent },
+  { path: 'addCabinet', component: AddCabinetComponent },
+
+  {
+    path: 'dashboard-doctor/ajout-ordonnance',
+    component: AjoutOrdonnanceComponent,
+  },
+
+  { path: 'nav', component: NavComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'login', component: LoginComponent },
+];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],

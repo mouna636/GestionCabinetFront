@@ -28,14 +28,15 @@ import { ListPatientComponent } from './list-patient/list-patient.component';
 import { EditConsultationComponent } from './edit-consultation/edit-consultation.component';
 import { EditPatientComponent } from './edit-patient/edit-patient.component';
 import { AjoutHoraireComponent } from './ajout-horaire/ajout-horaire.component';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { DatePipe } from '@angular/common';
 import { HistoriquePatientComponent } from './historique-patient/historique-patient.component';
 import { PaperCardComponent } from './paper-card/paper-card.component';
 import { AjoutOrdonnanceComponent } from './ajout-ordonnance/ajout-ordonnance.component';
 import { MedicamentComponent } from './medicament/medicament.component';
 import { NgxPrintModule } from 'ngx-print';
+import { XhrInterceptor } from './services/xhr.interceptor';
 
 @NgModule({
   declarations: [
@@ -76,15 +77,15 @@ import { NgxPrintModule } from 'ngx-print';
     AppRoutingModule,
     HttpClientModule,
     MatGridListModule,
-   ReactiveFormsModule,
+    ReactiveFormsModule,
     NgxPrintModule,
     MatToolbarModule,
     BrowserAnimationsModule,
-
-    
   ],
-  providers: [DatePipe,{provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true}  ],
+  providers: [
+    DatePipe,
+    { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
-  
 })
 export class AppModule {}
