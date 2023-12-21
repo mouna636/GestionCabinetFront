@@ -1,20 +1,20 @@
-export class Cabinet{
-    constructor(
+import { HoraireTravail } from "./HoraireTravail";
+
+
+
+export interface Cabinet{
+    
         
-        id:number,
-        name:string,
-        adresse:string,
-        telephone:string,
-        specialite:string,
-        matriculefiscale: String ,
-        photo: String ,
-        ville: String ,
-        codepostale: String ,
-        email: String ,
-        pwd: String ,
-        horairesTravail:any[]
+        id:number;
+        name:string;
+        adresse:string;
+        telephone:string;
+        specialite:string;
+        matriculefiscale: String ;
+        ville: String ;
+        horaires: HoraireTravail[];
        
         
         
-    ){}
+  
 }

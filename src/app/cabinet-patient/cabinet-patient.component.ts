@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CabinetService } from '../services/cabinet.service';
 import { ActivatedRoute } from '@angular/router';
+import { ProcessingImageService } from '../services/processing-image.service';
+import { Cabinet } from '../Models/cabinet';
+import { map } from 'rxjs';
+import { HorTravailService } from '../services/HorTravail.service';
 
 @Component({
   selector: 'app-cabinet-patient',
@@ -10,19 +14,24 @@ import { ActivatedRoute } from '@angular/router';
 export class CabinetPatientComponent implements OnInit {
   adresse:any;
   cabinets:any;
-  constructor(private cabinetservice:CabinetService,private route: ActivatedRoute){}
+  id:any;
+  constructor(private cabinetservice:CabinetService,private route: ActivatedRoute,private horaireService:HorTravailService){}
+ 
   ngOnInit(){
-   this.getAllCabinetsFromService();
+    this.getAllCabinetsFromService(); 
+  }
+  
+  getAllCabinetsFromService(){
+    this.cabinetservice.getAllCabinets().subscribe(
+      (data: Cabinet[]) => {  
+        this.cabinets = data;
+        console.log(data);
+      }
+    );
+  }
    
   
-  }
-getAllCabinetsFromService(){
-  this.cabinetservice.getAllCabinets().subscribe(
-   (data)=> {
-   this.cabinets=data;
-    }
-  )
-}
+
 searchCabinetByAdresse(){
   this.cabinetservice.searchCabinetByAdresse(this.adresse).subscribe(
     (data)=> {
@@ -30,4 +39,12 @@ searchCabinetByAdresse(){
        }
   );
       }
+      
+      /* deleteCabinet(id:any){
+        this.cabinetservice.deleteCabinet(id).subscribe(
+          ()=>{
+            this.getAllCabinetsFromService();
+          }
+        )
+      } */
     }

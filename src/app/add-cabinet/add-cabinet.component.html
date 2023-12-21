@@ -1,0 +1,62 @@
+<html>
+<body>
+   
+    <div class="row">
+    
+    <div class="col-6">
+        <form  (ngSubmit)='ajoutCabinet()'>
+            <div class="form-group">
+                <label for="name"></label>
+                <input type="text"  [(ngModel)]='cabinet.name' name="name" 
+                    placeholder="Nom Cabinet" />
+            </div>
+    
+            <div class="form-group">
+                <label for="name"></label>
+                <input type="text" [(ngModel)]='cabinet.adresse' name="name"
+                    placeholder="Adresse" />
+            </div>
+            <div class="form-group">
+                <label for="name"></label>
+                <input type="text"  [(ngModel)]='cabinet.telephone' name="name"  placeholder="Télephone"/>
+            </div>
+    
+            <div class="form-group">
+                <label for="name"></label>
+                <input type="text"  [(ngModel)]='cabinet.specialite' name="name" id="name"
+                    placeholder="Spécialité" />
+            </div>
+            <div class="form-group">
+                <label for="name"></label>
+                <input type="text"  [(ngModel)]='cabinet.matriculefiscale' name="name" 
+                    placeholder="Matricule fiscale" />
+            </div>
+            <div class="form-group">
+                <label for="name"></label>
+                <input type="text" [(ngModel)]='cabinet.ville' name="name" 
+                    placeholder="Ville" />
+            </div>
+         
+        
+            <h3>Ajouter des horaires:</h3>
+            <div *ngFor="let horaire of nouveauxHoraires; let i = index;">
+                <label>Jour:</label>
+                <input type="text" [(ngModel)]="nouveauxHoraires[i].jourSemaine" placeholder="Jour" required>
+            
+                <label>Heure de début:</label>
+                <input type="text" [(ngModel)]="nouveauxHoraires[i].heureDebut" placeholder="Heure de début" required>
+            
+                <label>Heure de fin:</label>
+                <input type="text" [(ngModel)]="nouveauxHoraires[i].heureFin" placeholder="Heure de fin" required>
+            </div>
+          
+            <button type="button" (click)="ajouterHoraire()">Ajouter un horaire</button>
+          
+            <button type="submit">Ajouter Cabinet</button>
+      
+        </form>
+    
+    </div>
+    </div>
+</body>
+    </html>

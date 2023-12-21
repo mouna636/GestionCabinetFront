@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { InfirmierService } from '../services/infirmier.service';
 
@@ -14,7 +13,7 @@ editInfirmierForm:any;
 id:any;
 infirmier:any={};
 
-constructor(private activateRoute: ActivatedRoute, private formBuilder: FormBuilder, private infirmierService: InfirmierService, private router: Router) { }
+constructor(private activateRoute: ActivatedRoute, private infirmierService: InfirmierService, private router: Router) { }
 
 ngOnInit() {
   this.id = this.activateRoute.snapshot.paramMap.get('id');
