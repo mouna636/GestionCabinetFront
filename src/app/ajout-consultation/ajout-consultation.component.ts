@@ -29,8 +29,10 @@ export class AjoutConsultationComponent {
     });
   }
   selectPatient() {
-    if (this.patientSelectionner != null)
+    if (this.patientSelectionner != null) {
       this.consultationService.setSelectedPatient(this.patientSelectionner);
+      console.log(this.patientSelectionner);
+    }
   }
   getPatients() {
     this.patientService.getAllPatients().subscribe((patients) => {
