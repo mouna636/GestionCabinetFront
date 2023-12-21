@@ -1,0 +1,8 @@
+<app-medicament></app-medicament>
+
+<div>
+<div *ngFor="let value of inputValues; let i = index">
+    <input [(ngModel)]="inputValues[i]" placeholder="Champ {{ i + 1 }}">
+  </div>
+  <button (click)="ajouterChamp()">Ajouter un champ</button>
+</div>

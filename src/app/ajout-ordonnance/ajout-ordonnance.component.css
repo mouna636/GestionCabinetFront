@@ -1,0 +1,41 @@
+
+    .bordered-form {
+        border: 3px solid #87CEEB; /* Couleur de la bordure bleu clair */
+        padding: 15px; /* Espace intérieur du cadre */
+        border-radius: 8px; /* Coins arrondis */
+        box-shadow: 0 0 10px rgba(0, 0, 255, 0.3); /* Ombre bleu clair */
+    }
+
+
+    .form-table-container {
+        margin-top: 1px; /* Ajustez la marge supérieure selon vos besoins */
+    }
+
+
+    .bordered-form table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 15px;
+    }
+
+    .bordered-form th, .bordered-form td {
+        border: 1px solid #87CEEB;
+        padding: 8px;
+        text-align: center;
+    }
+
+    .bordered-form th {
+        background-color: #87CEEB;
+        color: #fff;
+    }
+
+    .bordered-form input {
+        width: 100%;
+    }
+    
+    .hidden-content {
+        display: none;
+      }
+      
+
+

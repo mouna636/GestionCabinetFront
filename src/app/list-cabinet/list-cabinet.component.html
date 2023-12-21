@@ -1,35 +1,30 @@
- <table class="table">
-<thead>
-<tr>
-  <th scope="col">#</th>
-<th scope="col">name</th>
-<th scope="col">Adresse</th>
-<th scope="col">Telephone</th>
-<th scope="col">MatriculeFiscale</th>
-<th scope="col">Photo</th>
-<th scope="col">Ville</th>
-<th scope="col">CodePostale</th>
-<th scope="col">Email</th>
-<th scope="col">Password</th>
-<th scope="col">Actions</th>
-</tr>
-</thead>
-<tbody>
-<tr *ngFor='let c of cabinets'>
-<th >{{c.id}}</th>
-<td>{{c.name}}</td>
-<td>{{c.adresse}}</td>
-<td>{{c.telephone}}</td>
-<td>{{c.matriculefiscale}}</td>
-<td>{{c.photo}}</td>
-<td>{{c.ville}}</td> 
-<td>{{c.codepostale}}</td>
-<td>{{c.email}}</td>   
-<td>{{c.pwd}}</td>    
-<td>
-  <button class="btn btn-danger btn-sm" (click)="ajoutHoraire(c.id)">AddHoraire</button>
-</td>  
-</tr>
-</tbody>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Adresse</th>
+      <th scope="col">Telephone</th>
+      <th scope="col">MatriculeFiscale</th>
+      <th scope="col">Ville</th>
+      <th scope="col">Horaires</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let c of cabinets'>
+      <th>{{ c.id }}</th>
+      <td>{{ c.name }}</td>
+      <td>{{ c.adresse }}</td>
+      <td>{{ c.telephone }}</td>
+      <td>{{ c.matriculefiscale }}</td>
+      <td>{{ c.ville }}</td>
+      <td>
+        <ul>
+          <li *ngFor="let horaire of c.horaires">
+            <strong>{{ horaire.jourSemaine }}:</strong> {{ horaire.heureDebut }} - {{ horaire.heureFin }}
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
 </table>
-

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -10,7 +10,7 @@ import { SectionComponent } from './section/section.component';
 import { ContactComponent } from './contact/contact.component';
 import { AjoutCabinetComponent } from './ajout-cabinet/ajout-cabinet.component';
 import { ListCabinetComponent } from './list-cabinet/list-cabinet.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardDoctorComponent } from './dashboard-doctor/dashboard-doctor.component';
 import { DashboardInfermierComponent } from './dashboard-infermier/dashboard-infermier.component';
 import { AjoutInfermierComponent } from './ajout-infermier/ajout-infermier.component';
@@ -30,6 +30,19 @@ import { EditPatientComponent } from './edit-patient/edit-patient.component';
 import { AjoutHoraireComponent } from './ajout-horaire/ajout-horaire.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { DatePipe } from '@angular/common';
+import { HistoriquePatientComponent } from './historique-patient/historique-patient.component';
+import { PaperCardComponent } from './paper-card/paper-card.component';
+import { AjoutOrdonnanceComponent } from './ajout-ordonnance/ajout-ordonnance.component';
+import { MedicamentComponent } from './medicament/medicament.component';
+import { NgxPrintModule } from 'ngx-print';
+import { NavComponent } from './nav/nav.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
+import { XhrInterceptor } from './services/xhr.interceptor';
+import { AddCabinetComponent } from './add-cabinet/add-cabinet.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +62,6 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     EditInfermierComponent,
     DashboardStatComponent,
     SideBarComponent,
-    
     SideBarInfComponent,
     AjoutPatientComponent,
     AjoutConsultationComponent,
@@ -58,19 +70,30 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     EditConsultationComponent,
     EditPatientComponent,
     AjoutHoraireComponent,
-  
-    MatToolbarModule
-    
+    NavComponent,
+    HistoriquePatientComponent,
+    PaperCardComponent,
+    AjoutOrdonnanceComponent,
+    MedicamentComponent,
+    SignupComponent,
+    LoginComponent,
+    AddCabinetComponent,
   ],
   imports: [
     BrowserModule,
-     FormsModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    MatGridListModule
+    MatGridListModule,
+   ReactiveFormsModule,
+    NgxPrintModule,
+    MatToolbarModule,
+    BrowserAnimationsModule,
+
+    
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [DatePipe,{provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true}  ],
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule {}
-

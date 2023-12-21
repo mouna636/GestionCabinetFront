@@ -1,16 +1,15 @@
-export class horaireTravail{
-    constructor(
+export interface HoraireTravail{
+    
         
-        id:number,
-        date:Date,
-        heureDebut:string,
-        heureFin:string,
-        jourSemaine:string,
+
+        heureDebut:string;
+        heureFin:string;
+        jourSemaine:string;
        
         
        
         
         
         
-    ){}
+   
 }

@@ -6,14 +6,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class HorTravailService {
-  private apiUrl = 'http://localhost:8080/horaires';
+  private apiUrl:string = 'http://localhost:8080/horaires';
 
   constructor(private http: HttpClient) {}
 
   getHoraires(): Observable<any> {
     return this.http.get<any>(this.apiUrl);
   }
-
+  getHoraireTravailByCabinetId(id:number):Observable<any>{
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  }
   addHoraire(horaire: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, horaire);
   }

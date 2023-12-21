@@ -1,0 +1,8 @@
+<div *ngIf="!selectedPatient">
+  <app-ajout-consultation></app-ajout-consultation>
+</div>
+<div *ngIf="selectedPatient">
+  <app-ajout-consultation-v2
+    [selectedPatient]="selectedPatient"
+  ></app-ajout-consultation-v2>
+</div>

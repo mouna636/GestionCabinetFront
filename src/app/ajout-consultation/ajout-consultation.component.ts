@@ -11,37 +11,30 @@ import { PatientService } from '../services/patient.service';
   styleUrls: ['./ajout-consultation.component.css'],
 })
 export class AjoutConsultationComponent {
-  addConsultationForm: any;
-  consultation: any = {};
+  getPatientFromConsultation: any;
   patients: any = [];
-  // patient: Patient = {};
-  // patientSelectionner: Patient = {};
+  patientSelectionner: any = null;
+  showConsultationForm: boolean = false;
+
   constructor(
     private patientService: PatientService,
-    private formBuilder: FormBuilder,
     private consultationService: ConsultationService,
-    private router: Router
+    private formBuilder: FormBuilder
   ) {}
 
   ngOnInit() {
     this.getPatients();
-    this.addConsultationForm = this.formBuilder.group({
-      date_consultation: new Date(),
-      Synthese: ['Aucune synthèse'],
-      act: [''],
-      patient: [null],
+    this.getPatientFromConsultation = this.formBuilder.group({
+      patientSelectionner: [null],
     });
+  }
+  selectPatient() {
+    if (this.patientSelectionner != null)
+      this.consultationService.setSelectedPatient(this.patientSelectionner);
   }
   getPatients() {
     this.patientService.getAllPatients().subscribe((patients) => {
       this.patients = patients;
     });
-  }
-  saveConsultation() {
-    this.consultationService
-      .saveConsultation(this.consultation)
-      .subscribe(() => {
-        this.router.navigate(['dashboard-doctor/list-consultation']);
-      });
   }
 }

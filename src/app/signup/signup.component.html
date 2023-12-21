@@ -1,0 +1,33 @@
+
+<app-header></app-header>
+<div class="wrapper">
+  <div class="inner">
+    <div class="image-holder">
+      <img src="assets/images/5191079.jpg" alt="">
+    </div>
+        <form [formGroup]='signupForm'>  
+            <h3>Connexion</h3>
+            <div class="form-holder active">
+                <input type="text" class="form-control" [(ngModel)]='request.firstname' formControlName="firstname" placeholder="Nom">
+               </div>
+               <div class="form-holder active">
+                <input type="text" class="form-control" [(ngModel)]='request.lastname' formControlName="lastname" placeholder="Prenom">
+               </div>
+					<div class="form-holder active">
+              <input type="text" class="form-control" [(ngModel)]='request.email' formControlName="email" placeholder="Email">
+             </div> 
+             <div class="form-holder active">
+              <input type="text" class="form-control" [(ngModel)]='request.password' formControlName="password" placeholder="Mot de passe">
+            </div>
+            <div class="checkbox">
+							<input type="checkbox" checked> 
+				   	</div>
+					  <div class="form-login">
+             <button (click)="signup()">
+              Se connecter
+					   </button>
+             </div>
+       </form>
+       </div>
+      </div>
+		

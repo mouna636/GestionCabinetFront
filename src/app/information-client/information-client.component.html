@@ -1,0 +1,26 @@
+<div class="bg-light p-4 rounded border border-primary">
+  <!-- <hr class="w-100 h-10 bg-dark" /> -->
+  <h2 class="text-dark"><b>Les informations du patient</b></h2>
+  <div class="row mt-4">
+    <div class="col-4">
+      <p class="text-dark"><b>Nom et Prénom:</b></p>
+      <p class="text-dark"><b>Age:</b></p>
+      <p class="text-dark"><b>Sexe:</b></p>
+      <p class="text-dark"><b>Adresse:</b></p>
+      <p class="text-dark"><b>Situation familliale:</b></p>
+      <p class="text-dark"><b>Assusrance médical:</b></p>
+      <p class="text-dark"><b>Code Assurance:</b></p>
+      <p class="text-dark"><b>Téléphone:</b></p>
+    </div>
+    <div class="col-2">
+      <p>{{ patient.nomPatient + " " + patient.prenomPatient }}</p>
+      <p>{{ patientAge }}</p>
+      <p>{{ patient.sexe }}</p>
+      <p>{{ patient.adresse }}</p>
+      <p>{{ patient.situationFamilliale }}</p>
+      <p>{{ patient.assusranceMedical }}</p>
+      <p>{{ patient.codeAssurance }}</p>
+      <p>{{ patient.telephone }}</p>
+    </div>
+  </div>
+</div>

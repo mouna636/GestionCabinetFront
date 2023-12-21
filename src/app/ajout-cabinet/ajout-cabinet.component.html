@@ -1,5 +1,8 @@
 
+ <body>
+   
 <div class="row">
+
 <div class="col-6">
     <form #addCabinetForm='ngForm' (ngSubmit)='addCabinet()'>
         <div class="form-group">
@@ -15,7 +18,7 @@
         </div>
         <div class="form-group">
             <label for="name"></label>
-            <input type="text" class="form-control" [(ngModel)]='cabinet.telephone' name="name" 
+            <input type="text" class="form-control" [(ngModel)]='cabinet.telephone' name="name"  placeholder="Télephone"/>
         </div>
 
         <div class="form-group">
@@ -33,17 +36,9 @@
             <input type="text" class="form-control" [(ngModel)]='cabinet.ville' name="name" 
                 placeholder="Ville" />
         </div>
-        <div class="form-group">
-            <label for="name"></label>
-            <input type="text" class="form-control" [(ngModel)]='cabinet.codepostale' name="name" 
-                placeholder="Code Postale" />
-        </div>
+       
 
-        <div class="form-group">
-            <label for="email"></label>
-            <input type="email" class="form-control" [(ngModel)]='cabinet.email' name="email" 
-                placeholder="Email" />
-        </div>
+    
 
         <div class="form-group form-button">
             <input type="submit"  class="form-submit" value="Créer" />
@@ -68,11 +63,13 @@
                         <span class="btn-remove-image" (click)="removeImages(i)">
                             X
                         </span>
-                        <img [src]="file.url" width="200px" height="200px">
+                        <img [src]="file.url" width="200px" height="200px" >
                     </div>
                 </mat-grid-tile>
             </mat-grid-list>
         </div>
     </div>
-</div>
-</div>
+</div></div>
+
+
+</body>

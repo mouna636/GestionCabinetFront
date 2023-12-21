@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { CabinetService } from '../services/cabinet.service';
 import { Router } from '@angular/router';
+import { HorTravailService } from '../services/HorTravail.service';
 
 @Component({
   selector: 'app-ajout-horaire',
@@ -9,9 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./ajout-horaire.component.css']
 })
 export class AjoutHoraireComponent {
-  constructor(private formBuilder:FormBuilder,private cabinetService:CabinetService,private router:Router){}
+  constructor(private formBuilder:FormBuilder,private horaireService: HorTravailService,private router:Router){}
   cabinetId :any; 
-  horaireTravail:any={};
+  horaire:any={};
   horaireForm:any;
  
   ngOnInit() {
@@ -24,9 +24,9 @@ export class AjoutHoraireComponent {
   )
 }
   ajouterHoraire(){
-    this.cabinetService.ajouterHoraireTravailAuCabinet(this.cabinetId, this.horaireTravail)
-    .subscribe(
-      ()=>{
+    this.horaireService.addHoraire(this.horaire).subscribe(
+      (data)=>{
+this.horaire=data;
         this.router.navigate(['']);
       }
     ) 

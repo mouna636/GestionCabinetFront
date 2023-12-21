@@ -4,6 +4,7 @@ import { CabinetService } from '../services/cabinet.service';
 import { Router } from '@angular/router';
 import { FileHandle } from '../Models/file-handle.Model';
 import { DomSanitizer } from '@angular/platform-browser';
+import { HorTravailService } from '../services/HorTravail.service';
 
 @Component({
   selector: 'app-ajout-cabinet',
@@ -13,7 +14,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class AjoutCabinetComponent implements OnInit {
   cabinet: any = { cabinetImages: [] };
   addCabinetForm: any;
-
+ 
   constructor(
     private formBuilder: FormBuilder,
     private cabinetService: CabinetService,
@@ -29,11 +30,9 @@ export class AjoutCabinetComponent implements OnInit {
       specialite: [''],
       matriculefiscale: [''],
       ville: [''],
-      codepostale: [''],
-      email: [''],
-      pwd: [''],
-      cabinetImages: {}
+    
     });
+    
   }
 
   addCabinet() {
@@ -78,4 +77,5 @@ export class AjoutCabinetComponent implements OnInit {
     this.cabinet.cabinetImages.splice(i,1);
 
   }
-}
+
+  }
