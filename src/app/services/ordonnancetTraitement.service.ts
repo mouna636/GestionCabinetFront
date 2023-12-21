@@ -8,7 +8,7 @@ import { Observable } from "rxjs";
 })
 
 
-export class ordonnancetTraitementService {
+export class OrdonnancetTraitementService {
 
     OrdonnancetTraitementUrl: string = 'http://localhost:8080/ordonnancetTraitement';
 
@@ -35,4 +35,9 @@ export class ordonnancetTraitementService {
         return this.httpClient.delete(this.OrdonnancetTraitementUrl + '/' + id);
     }
 
+     // Nouvelle méthode pour récupérer les ordonnances liées à un patient
+    /* getOrdonnancesByPatientId(patientId: number): Observable<any> {
+        return this.httpClient.get(this.OrdonnancetTraitementUrl + '/patient/' + patientId);
+  } */
+    
 }

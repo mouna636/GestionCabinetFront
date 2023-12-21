@@ -3,7 +3,7 @@ export class Patient {
     id: Number,
     nomPatient: String,
     prenomPatient: String,
-    dateNaissance: Date,
+    dateNaissance: String,
     sexe: String,
     adresse: String,
     situationFamilliale: String,

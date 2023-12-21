@@ -37,6 +37,9 @@ import { PaperCardComponent } from './paper-card/paper-card.component';
 import { AjoutOrdonnanceComponent } from './ajout-ordonnance/ajout-ordonnance.component';
 import { MedicamentComponent } from './medicament/medicament.component';
 import { NgxPrintModule } from 'ngx-print';
+import { ListOrdonnancesComponent } from './list-ordonnances/list-ordonnances.component';
+import { AjoutOrdonnanceSelectPatientComponent } from './ajout-ordonnance-select-patient/ajout-ordonnance-select-patient.component';
+import { AjoutOrdonnanceMainComponent } from './ajout-ordonnance-main/ajout-ordonnance-main.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +75,9 @@ import { NgxPrintModule } from 'ngx-print';
     PaperCardComponent,
     AjoutOrdonnanceComponent,
     MedicamentComponent,
+    ListOrdonnancesComponent,
+    AjoutOrdonnanceSelectPatientComponent,
+    AjoutOrdonnanceMainComponent,
   ],
   imports: [
     BrowserModule,

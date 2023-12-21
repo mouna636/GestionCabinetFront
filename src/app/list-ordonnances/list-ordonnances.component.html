@@ -1,0 +1,25 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Age</th>
+            <th>Date d'ordonnance</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of patients">
+            <th>{{p.id}}</th>
+            <td>{{ p.nomPatient }}</td>
+            <td>{{ p.prenomPatient }}</td>
+            <td>{{ p.dateNaissance }}</td>
+        </tr>
+        <tr *ngFor="let o of ordonnances">
+            <th>{{ o.id }}</th>
+            <td>{{o.dateOrdonnance}}</td>
+        </tr>
+    </tbody>
+
+</table>

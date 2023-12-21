@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { PatientService } from '../services/patient.service';
 import { Router } from '@angular/router';
+import { OrdonnancetTraitementService } from '../services/ordonnancetTraitement.service';
+import { ConsultationService } from '../services/consultation.service';
 
 @Component({
   selector: 'app-ajout-ordonnance',
@@ -9,26 +11,31 @@ import { Router } from '@angular/router';
   styleUrls: ['./ajout-ordonnance.component.css'],
 })
 export class AjoutOrdonnanceComponent {
-  addPatientForm: any;
-  patient: any = {};
-  addOrdonnanceTraitementForm: any;
+  //addPatientForm: any;
+  patients: any = [];
+  consultation: any = {};
   ordonnanceTraitement: any = {};
+  addOrdonnanceTraitementForm: any;
   medicamentForm!: FormGroup;
   medicaments: FormArray;
-  previewData: any = {};
-  showPreview: boolean = false;
-  hideOtherContent: boolean = false;
 
+  @Input () selectedPatient: any;
+  selectedPatientAge: any;
   constructor(
     private formBuilder: FormBuilder,
     private patientService: PatientService,
+    private ordonnanceTraitementService: OrdonnancetTraitementService,
+    private consultationService: ConsultationService,
     private router: Router
   ) {
     this.medicaments = this.formBuilder.array([this.createMedFormGroup()]);
   }
 
   ngOnInit() {
-    this.addPatientForm = this.formBuilder.group({
+    console.log(this.selectedPatient);
+    
+    /* this.addPatientForm = this.formBuilder.group({
+      id: [''],
       nomPatient: [''],
       prenomPatient: [''],
       dateNaissance: [''],
@@ -38,11 +45,17 @@ export class AjoutOrdonnanceComponent {
       assusranceMedical: [''],
       codeAssurance: [''],
       telephone: [''],
+    }); */
+
+    this.getPatients();
+   
+    this.addOrdonnanceTraitementForm = this.formBuilder.group({
+      id: [''],
+      dateOrdonnance: new Date(),
     });
 
-    this.addOrdonnanceTraitementForm = this.formBuilder.group({
-      dateOrdonnance: [''],
-    });
+    this.consultation.patient = this.selectedPatient;
+    
 
     this.medicamentForm = this.formBuilder.group({
       medicaments: this.formBuilder.array([this.createMedFormGroup()]),
@@ -75,4 +88,40 @@ export class AjoutOrdonnanceComponent {
       qsp: new FormControl(''),
     });
   }
+  
+  // Nouvelle méthode pour récupérer les ordonnances liées à un patient
+  /* private getOrdonnancesForPatient(patientId: number) {
+    this.ordonnanceTraitementService.getOrdonnancesByPatientId(patientId).subscribe((ordonnances) => {
+      console.log("Ordonnances pour le patient:", ordonnances);
+     
+    });
+  } */
+
+  getPatients() {
+    this.patientService.getAllPatients().subscribe((patients) => {
+      this.patients = patients;
+    });
+  }
+
+  savePatient() {
+    console.log(this.patients);
+    this.patientService.savePatient(this.patients).subscribe(() => {
+      this.router.navigate(['/list-ordonnances']);
+    });
+  }
+  
+  saveOrdonnance() {
+    console.log(this.ordonnanceTraitement);
+    this.ordonnanceTraitementService.addordonnancetTraitement(this.ordonnanceTraitement).subscribe(() => {
+      this.router.navigate(['/list-ordonnances']);
+    });
+}
+handleClick() {
+  this.savePatient();
+  this.saveOrdonnance();
+
+}
+
+
+
 }

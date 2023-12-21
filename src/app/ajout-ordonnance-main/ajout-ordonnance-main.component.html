@@ -1,0 +1,13 @@
+<div *ngIf="!selectedPatient">
+  <app-ajout-ordonnance-select-patient></app-ajout-ordonnance-select-patient>
+</div>
+<div *ngIf="selectedPatient">
+    <app-ajout-ordonnance [selectedPatient]="selectedPatient">
+    </app-ajout-ordonnance>
+</div>
+    
+
+
+
+ 
+      
