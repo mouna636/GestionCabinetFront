@@ -65,7 +65,6 @@ import { XhrInterceptor } from './services/xhr.interceptor';
     EditConsultationComponent,
     EditPatientComponent,
     AjoutHoraireComponent,
-    NavComponent,
     HistoriquePatientComponent,
     PaperCardComponent,
     AjoutOrdonnanceComponent,
@@ -80,7 +79,7 @@ import { XhrInterceptor } from './services/xhr.interceptor';
     ReactiveFormsModule,
     NgxPrintModule,
     MatToolbarModule,
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
   ],
   providers: [
     DatePipe,
