@@ -28,59 +28,60 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { AddCabinetComponent } from './add-cabinet/add-cabinet.component';
 import { AjoutConsultationMainComponent } from './ajout-consultation-main/ajout-consultation-main.component';
+import { AjoutOrdonnanceMainComponent } from './ajout-ordonnance-main/ajout-ordonnance-main.component';
 
 const routes: Routes = [
+
   { path: '', component: HomeComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'footer', component: FooterComponent },
   { path: 'header', component: HeaderComponent },
   { path: 'section', component: SectionComponent },
+
+
+  //Affichage unique 
   { path: 'ajout-cabinet', component: AjoutCabinetComponent },
   { path: 'list-cabinet', component: ListCabinetComponent },
-  { path: 'dashboard-doctor', component: DashboardDoctorComponent },
+
+
   { path: 'ajout-infermier', component: AjoutInfermierComponent },
   { path: 'list-infermier', component: ListInfermierComponent },
+
   { path: 'cabinet-patient', component: CabinetPatientComponent },
   { path: 'addCabinet', component: AddCabinetComponent },
-  {
-    path: 'dashboard-doctor/ajout-infermier',
-    component: AjoutInfermierComponent,
-  },
-  {
-    path: 'dashboard-doctor/list-infermier',
-    component: ListInfermierComponent,
-  },
-  {
-    path: 'dashboard-doctor/edit-infermier/:id',
-    component: EditInfermierComponent,
-  },
-  {
-    path: 'dashboard-doctor/ajout-consultation',
-    component: AjoutConsultationMainComponent,
-  },
-  {
-    path: 'dashboard-doctor/edit-consultation/:id',
-    component: EditConsultationComponent,
-  },
-  {
-    path: 'dashboard-doctor/list-consultation',
-    component: ListConsultationComponent,
-  },
-  {
-    path: 'dashboard-doctor/ajout-ordonnance',
-    component: AjoutOrdonnanceComponent,
-  },
-  { path: 'dashboard-infermier', component: DashboardInfermierComponent },
+
   { path: 'ajout-ordonnance', component: AjoutOrdonnanceComponent },
-  {
-    path: 'dashboard-infermier/ajout-patient',
-    component: AjoutPatientComponent,
-  },
-  {
-    path: 'dashboard-infermier/edit-patient/:id',
-    component: EditPatientComponent,
-  },
-  { path: 'dashboard-infermier/list-patient', component: ListPatientComponent },
+
+
+  //Affichage dans le Dashbord-doctor
+  { path: 'dashboard-doctor', component: DashboardDoctorComponent },
+
+  {path: 'dashboard-doctor/ajout-infermier',component: AjoutInfermierComponent,},
+  {path: 'dashboard-doctor/list-infermier', component: ListInfermierComponent,},  
+  {path: 'dashboard-doctor/edit-infermier/:id',component: EditInfermierComponent,}, 
+  
+  {path: 'dashboard-doctor/ajout-consultation',component: AjoutConsultationMainComponent, },
+  {path: 'dashboard-doctor/edit-consultation/:id', component: EditConsultationComponent,},
+  {path: 'dashboard-doctor/list-consultation',component: ListConsultationComponent,},
+
+
+
+  
+  /* {path: 'dashboard-doctor/ajout-ordonnance',component: AjoutOrdonnanceComponent,}, */
+  {path:'dashboard-doctor/ajout-ordonnanceMain',component: AjoutOrdonnanceMainComponent, },
+
+
+
+  //Affichage dans le Dashbord-infermier
+  { path: 'dashboard-infermier', component: DashboardInfermierComponent },
+
+  {path: 'dashboard-infermier/ajout-patient',component: AjoutPatientComponent,},
+  {path: 'dashboard-infermier/edit-patient/:id',component: EditPatientComponent, },
+  {path: 'dashboard-infermier/list-patient', component: ListPatientComponent },
+  
+  
+  //Register and Login
+  
   { path: 'nav', component: NavComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },

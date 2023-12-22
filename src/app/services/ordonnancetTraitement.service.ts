@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import * as moment from 'moment'
+import { BehaviorSubject, Observable } from "rxjs";
 
 
 @Injectable({
@@ -8,9 +9,18 @@ import { Observable } from "rxjs";
 })
 
 
-export class ordonnancetTraitementService {
+export class OrdonnancetTraitementService {
 
-    OrdonnancetTraitementUrl: string = 'http://localhost:8080/ordonnancetTraitement';
+    OrdonnancetTraitementUrl: string = 'http://localhost:8080/ordonnanceTraitement';
+    
+
+    //ajout
+    private selectedPatientSource = new BehaviorSubject<any>(null);
+    
+    selectedPatient$ = this.selectedPatientSource.asObservable();
+
+    //----
+
 
     constructor(private httpClient: HttpClient) { }
 
@@ -34,5 +44,17 @@ export class ordonnancetTraitementService {
     deleteordonnancetTraitement(id: any): Observable<any> {
         return this.httpClient.delete(this.OrdonnancetTraitementUrl + '/' + id);
     }
+
+
+    //ajout
+    getOrdonnanceByPatientId(id: number): Observable<any>{
+        return this.httpClient.get(this.OrdonnancetTraitementUrl + '/patient/' +id);
+    }
+
+    setSelectedPatient(patient: any) {
+        this.selectedPatientSource.next(patient);
+      }
+
+    //-----
 
 }

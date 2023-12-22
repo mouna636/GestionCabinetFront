@@ -45,6 +45,8 @@ import { AddCabinetComponent } from './add-cabinet/add-cabinet.component';
 import { InformationClientComponent } from './information-client/information-client.component';
 import { AjoutConsultationV2Component } from './ajout-consultation-v2/ajout-consultation-v2.component';
 import { AjoutConsultationMainComponent } from './ajout-consultation-main/ajout-consultation-main.component';
+import { AjoutOrdonnacePatientComponent } from './ajout-ordonnace-patient/ajout-ordonnace-patient.component';
+import { AjoutOrdonnanceMainComponent } from './ajout-ordonnance-main/ajout-ordonnance-main.component';
 
 @NgModule({
   declarations: [
@@ -68,10 +70,14 @@ import { AjoutConsultationMainComponent } from './ajout-consultation-main/ajout-
     SideBarComponent,
     SideBarInfComponent,
     AjoutPatientComponent,
+    
+    //Consultation
     AjoutConsultationComponent,
     AjoutConsultationV2Component,
     AjoutConsultationMainComponent,
     ListConsultationComponent,
+
+    //-----
     ListPatientComponent,
     EditConsultationComponent,
     EditPatientComponent,
@@ -79,11 +85,16 @@ import { AjoutConsultationMainComponent } from './ajout-consultation-main/ajout-
     NavComponent,
     HistoriquePatientComponent,
     PaperCardComponent,
-    AjoutOrdonnanceComponent,
+    
     MedicamentComponent,
     SignupComponent,
     LoginComponent,
     AddCabinetComponent,
+
+    //Ordonnance
+    AjoutOrdonnacePatientComponent,
+    AjoutOrdonnanceMainComponent,
+    AjoutOrdonnanceComponent,
   ],
   imports: [
     BrowserModule,

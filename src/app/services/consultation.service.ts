@@ -8,22 +8,17 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class ConsultationService {
   ConsultationUrl: string = 'http://localhost:8080/consultations';
+  
   private selectedPatientSource = new BehaviorSubject<any>(null);
+  
   selectedPatient$ = this.selectedPatientSource.asObservable();
 
   constructor(private httpClient: HttpClient) {}
 
-  calculateAge(dateOfBirth: Date): number {
-    const today = moment();
-    const birthDate = moment(dateOfBirth, 'YYYY-MM-DD');
-    return today.diff(birthDate, 'years');
-  }
   getConsultationById(id: any): Observable<any> {
     return this.httpClient.get(this.ConsultationUrl + '/' + id);
   }
-  setSelectedPatient(patient: any) {
-    this.selectedPatientSource.next(patient);
-  }
+  
   getAllConsultations(): Observable<any> {
     return this.httpClient.get(this.ConsultationUrl);
   }
@@ -50,5 +45,15 @@ export class ConsultationService {
       month: 'short',
       day: 'numeric',
     });
+  }
+
+  calculateAge(dateOfBirth: Date): number {
+    const today = moment();
+    const birthDate = moment(dateOfBirth, 'YYYY-MM-DD');
+    return today.diff(birthDate, 'years');
+  }
+
+  setSelectedPatient(patient: any) {
+    this.selectedPatientSource.next(patient);
   }
 }
