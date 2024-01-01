@@ -29,6 +29,7 @@ import { LoginComponent } from './login/login.component';
 import { AddCabinetComponent } from './add-cabinet/add-cabinet.component';
 import { AjoutConsultationMainComponent } from './ajout-consultation-main/ajout-consultation-main.component';
 import { AjoutOrdonnanceMainComponent } from './ajout-ordonnance-main/ajout-ordonnance-main.component';
+import { ListOrdonnanceComponent } from './list-ordonnance/list-ordonnance.component';
 
 const routes: Routes = [
 
@@ -39,7 +40,7 @@ const routes: Routes = [
   { path: 'section', component: SectionComponent },
 
 
-  //Affichage unique 
+  //Affichage unique test :
   { path: 'ajout-cabinet', component: AjoutCabinetComponent },
   { path: 'list-cabinet', component: ListCabinetComponent },
 
@@ -51,36 +52,42 @@ const routes: Routes = [
   { path: 'addCabinet', component: AddCabinetComponent },
 
   { path: 'ajout-ordonnance', component: AjoutOrdonnanceComponent },
+  
+  //--------------------------------------------------------------------------
 
 
-  //Affichage dans le Dashbord-doctor
+  //Affichage dans le Dashbord-doctor :
   { path: 'dashboard-doctor', component: DashboardDoctorComponent },
-
+      
+      //Gestion des infermiers
   {path: 'dashboard-doctor/ajout-infermier',component: AjoutInfermierComponent,},
   {path: 'dashboard-doctor/list-infermier', component: ListInfermierComponent,},  
   {path: 'dashboard-doctor/edit-infermier/:id',component: EditInfermierComponent,}, 
-  
+
+      //Gestion des consultations
   {path: 'dashboard-doctor/ajout-consultation',component: AjoutConsultationMainComponent, },
   {path: 'dashboard-doctor/edit-consultation/:id', component: EditConsultationComponent,},
   {path: 'dashboard-doctor/list-consultation',component: ListConsultationComponent,},
 
-
-
-  
-  /* {path: 'dashboard-doctor/ajout-ordonnance',component: AjoutOrdonnanceComponent,}, */
+      //Gestion des ordonnances
   {path:'dashboard-doctor/ajout-ordonnanceMain',component: AjoutOrdonnanceMainComponent, },
+  {path:'dashboard-doctor/list-ordonnances',component: ListOrdonnanceComponent, },
 
 
+  //--------------------------------------------------------------------------
 
-  //Affichage dans le Dashbord-infermier
+
+  //Affichage dans le Dashbord-infermier :
   { path: 'dashboard-infermier', component: DashboardInfermierComponent },
 
   {path: 'dashboard-infermier/ajout-patient',component: AjoutPatientComponent,},
   {path: 'dashboard-infermier/edit-patient/:id',component: EditPatientComponent, },
   {path: 'dashboard-infermier/list-patient', component: ListPatientComponent },
+
+  //--------------------------------------------------------------------------
   
   
-  //Register and Login
+  //Register and Login :
   
   { path: 'nav', component: NavComponent },
   { path: 'signup', component: SignupComponent },

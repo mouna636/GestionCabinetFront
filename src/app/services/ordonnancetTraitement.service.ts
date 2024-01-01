@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import * as moment from 'moment'
-import { BehaviorSubject, Observable } from "rxjs";
+import { BehaviorSubject, Observable, catchError } from "rxjs";
 
 
 @Injectable({
@@ -24,10 +24,21 @@ export class OrdonnancetTraitementService {
 
     constructor(private httpClient: HttpClient) { }
 
+    /* getAllOrdonnancetTraitement(): Observable<any> {
+        return this.httpClient.get(this.OrdonnancetTraitementUrl);
+    } */
+
 
     getAllOrdonnancetTraitement(): Observable<any> {
-        return this.httpClient.get(this.OrdonnancetTraitementUrl);
+        const options = { timeout: 15000 };
+        return this.httpClient.get(this.OrdonnancetTraitementUrl).pipe(
+            catchError((error) => {
+                console.error('Erreur lors de la récupération des ordonnances:', error);
+                throw error; 
+            })
+        );
     }
+    
 
     getordonnancetTraitementById(id: any): Observable<any> {
         return this.httpClient.get(this.OrdonnancetTraitementUrl + '/' + id);

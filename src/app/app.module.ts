@@ -47,6 +47,7 @@ import { AjoutConsultationV2Component } from './ajout-consultation-v2/ajout-cons
 import { AjoutConsultationMainComponent } from './ajout-consultation-main/ajout-consultation-main.component';
 import { AjoutOrdonnacePatientComponent } from './ajout-ordonnace-patient/ajout-ordonnace-patient.component';
 import { AjoutOrdonnanceMainComponent } from './ajout-ordonnance-main/ajout-ordonnance-main.component';
+import { ListOrdonnanceComponent } from './list-ordonnance/list-ordonnance.component';
 
 @NgModule({
   declarations: [
@@ -95,6 +96,7 @@ import { AjoutOrdonnanceMainComponent } from './ajout-ordonnance-main/ajout-ordo
     AjoutOrdonnacePatientComponent,
     AjoutOrdonnanceMainComponent,
     AjoutOrdonnanceComponent,
+    ListOrdonnanceComponent,
   ],
   imports: [
     BrowserModule,

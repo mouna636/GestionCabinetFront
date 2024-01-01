@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body id="page-top">
+  <div id="wrapper">
+    <!-- Sidebar -->
+  <app-side-bar></app-side-bar>
+    <!-- Sidebar -->
+
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+
+        <!-- TopBar -->
+       <app-top-bar></app-top-bar>
+        <!-- Topbar -->
+
+        <!-- Container Fluid-->
+        <div class="container-fluid" id="container-wrapper">
+          <section id="services" class="services section-bg">
+            <div class="container" data-aos="fade-up">
+              <div class="section-title">
+                <h2>liste des infermiers</h2>
+              </div>
+          
+              
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Ordonnance ID</th>
+                            <th>Patient ID</th>
+                            
+                            <th>Date d'ordonnance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr *ngFor="let o of ordonnanceTraitement">
+                          <th>{{ o.id }}</th>
+
+                          <td>
+                            {{
+                              o.patient.nomPatient + " " + o.patient.prenomPatient
+                            }}
+                          </td>
+
+                            <td>{{ o.dateOrdonnance }}</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+          <!--Affichage de formulaire de l'ajout cabinet-->
+         <!--  <div *ngIf="sectionAfficher == 'ajouterCabinet' " ><app-ajout-cabinet></app-ajout-cabinet></div>
+          <div *ngIf="sectionAfficher == 'consulterCabinet' " ><app-list-cabinet></app-list-cabinet></div> -->
+
+         <!--Affichage de formulaire de l'ajout Infermier-->
+         <!-- <div *ngIf="sectionAfficher == 'ajouterInfermier' " ><app-ajout-infermier></app-ajout-infermier></div>
+          <div *ngIf="sectionAfficher == 'consulterInfermier' " ><app-list-infermier></app-list-infermier></div> -->
+
+
+          <!-- Modal Logout -->
+          <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Are you sure you want to logout?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
+                  <a href="login.html" class="btn btn-primary">Logout</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!---Container Fluid-->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scroll to top -->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+</body>
+
+</html>
+
+
+
+ 
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+ 
+  
+  
+
+
+
+ 
